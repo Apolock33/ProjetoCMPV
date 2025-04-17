@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { GlobalContext } from '../contexts/GlobalContext';
+import { GlobalContext } from '../contexts/globalContext';
 import { Button } from 'primereact/button';
 import { FaBars, FaUser } from 'react-icons/fa6';
 import { motion } from 'motion/react';
