@@ -12,6 +12,7 @@ const HomeCarousel = () => {
     const {
         isMobile
     } = useContext(GlobalContext);
+
     const images = [
         {
             itemImageSrc: Img1,
@@ -62,12 +63,30 @@ const HomeCarousel = () => {
 
     const itemTemplate = (item) => {
         return (
-            <img src={item.itemImageSrc} alt={item.alt} style={{ width: '100%', height: isMobile?'40vh':'60vh' }} className='object-fit' /> //necessita de ajustes de tamanho para responsividade
+            <img src={item.itemImageSrc} alt={item.alt} style={{
+                minWidth: '100%',
+                minHeight: isMobile ? '40vh' : '60vh',
+                objectFit: 'cover',
+                objectPosition: 'center'
+            }} />
         )
     }
 
     return (
-        <Galleria value={images} responsiveOptions={responsiveOptions} numVisible={5} circular showItemNavigators showItemNavigatorsOnHover showIndicators item={itemTemplate} showThumbnails={false} className='w-full' style={{ width: '100vw' }} showIndicatorsOnItem={true} />
+        <Galleria
+            value={images}
+            responsiveOptions={responsiveOptions}
+            numVisible={5}
+            circular
+            showItemNavigators
+            showItemNavigatorsOnHover={!isMobile}
+            draggable
+            showIndicators
+            item={itemTemplate}
+            showThumbnails={false}
+            className='w-full'
+            style={{ width: '100vw' }}
+            showIndicatorsOnItem={true} />
     )
 }
 

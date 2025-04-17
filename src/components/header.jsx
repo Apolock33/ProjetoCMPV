@@ -3,7 +3,7 @@ import { GlobalContext } from '../contexts/globalContext';
 import { Button } from 'primereact/button';
 import { FaBars, FaFacebook, FaLinkedin } from 'react-icons/fa6';
 import { motion } from 'motion/react';
-import Logo from '../assets/imgs/logos/LOGO3.png';
+import Logo from '../assets/imgs/logos/newLogoDark.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import GeneralDrawer from './generalDrawer';
 import { IconField } from "primereact/iconfield";
@@ -70,17 +70,17 @@ const Header = () => {
                     <motion.img
                         initial={{ width: 0 }}
                         animate={{
-                            width: isMobile ? 140 : 300,
+                            width: isMobile ? 140 : 400,
                             transition: {
                                 duration: 0.3,
                                 ease: 'easeInOut',
                             }
                         }}
 
-                        whileInView={{ width: isScrollingDown ? 140 : 300 }}
+                        whileInView={{ width: isScrollingDown ? 140 : isMobile ? 300 : 490 }}
                         src={Logo}
                         alt="Logo"
-                        width={isMobile ? 140 : 300}
+                        width={isMobile ? 140 : 400}
                     />
                 </div>
 
@@ -122,7 +122,7 @@ const Header = () => {
                 className={`w-full search-navbar flex align-items-end gap-3 ${isMobile ? 'px-4 justify-content-center' : 'px-8 justify-content-end'}`}
                 initial={{ opacity: 1, height: isMobile ? 50 : 160 }}
                 whileInView={{
-                    height: isMobile ? 165 : 165,
+                    height: isMobile ? 135 : 165,
                     opacity: showSecondaryHeader ? 1 : 0
                 }}
             >

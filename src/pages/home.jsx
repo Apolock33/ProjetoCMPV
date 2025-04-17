@@ -10,7 +10,7 @@ const Home = () => {
       <section id='carousel'>
         <HomeCarousel />
       </section>
-      <section id='news' className='flex justify-content-between px-5 py-3'>
+      <section id='news' >
         <News />
       </section>
     </>
