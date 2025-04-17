@@ -8,6 +8,7 @@ export const GlobalProvider = ({ children }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [isScrollingDown, setIsScrollingDown] = useState(false);
     const [lastScrollYValue, setLastScrollYValue] = useState(0);
+    const [showSecondaryHeader, setShowSecondaryHeader] = useState(true);
     const { width } = useWindowSize();
     const { scrollY } = useScrollDown();
 
@@ -15,6 +16,7 @@ export const GlobalProvider = ({ children }) => {
         if (width <= 1025) {
             setIsMobile(true);
         }
+
         if (width > 1025) {
             setIsMobile(false);
         }
@@ -23,7 +25,15 @@ export const GlobalProvider = ({ children }) => {
             setLastScrollYValue(scrollY);
         }, 1000);
 
-        if (scrollY > 0 && scrollY >= 300) {
+        if (scrollY === 0 ) {
+            setShowSecondaryHeader(true);
+        }
+
+        if (scrollY > 0 && scrollY >= 100) {
+            setShowSecondaryHeader(false);
+        }
+
+        if (scrollY > 0 && scrollY >= 200) {
             setIsScrollingDown(true);
         }
 
@@ -33,7 +43,7 @@ export const GlobalProvider = ({ children }) => {
     });
 
     return (
-        <GlobalContext.Provider value={{ isMobile, isScrollingDown }}>
+        <GlobalContext.Provider value={{ isMobile, isScrollingDown, showSecondaryHeader }}>
             {children}
         </GlobalContext.Provider>
     )

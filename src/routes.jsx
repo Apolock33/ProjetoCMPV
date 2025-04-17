@@ -2,6 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/home'
 import Spaces from './pages/spaces'
+import LogIn from './pages/login'
 
 const Routes = () => {
     const publicRoutes = [
@@ -14,6 +15,11 @@ const Routes = () => {
             id: 4,
             path: '/espacos',
             element: <Spaces />
+        },
+        {
+            id: 5,
+            path: '/login',
+            element: <LogIn />
         },
     ];
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react';
 import { FaX } from 'react-icons/fa6';
+import { Button } from 'primereact/button';
 
 const GeneralDrawer = ({ isVisible, onClose, drawerSide, children }) => {
 
@@ -15,9 +16,15 @@ const GeneralDrawer = ({ isVisible, onClose, drawerSide, children }) => {
             opacity: 1,
             x: "0",
             scale: 1,
-            transition: { delay: 0.1, duration: 0.3 }
+            transition: {
+                duration: 0.2
+            }
         },
-        exit: { opacity: 0, scale: 0.7, transition: { duration: 0.2 } }
+        exit: {
+            opacity: 0, transition: {
+                duration: 0.2
+            }
+        }
     };
 
     useEffect(() => {
@@ -75,7 +82,12 @@ const GeneralDrawer = ({ isVisible, onClose, drawerSide, children }) => {
                         }}
                     >
                         <div className='flex justify-content-end'>
-                            <FaX size={20} onClick={onClose} />
+                            <Button
+                                rounded
+                                outlined
+                                className='border-circle p-2 border-none'
+                                icon={<FaX size={18} onClick={onClose} />}
+                            />
                         </div>
                         {children}
                     </motion.div>
