@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import useWindowSize from '../hooks/useWindowSize';
 import useScrollDown from '../hooks/useScrollDown';
 
-export const GlobalContext = React.createContext();
+export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
     const [isMobile, setIsMobile] = useState(false);

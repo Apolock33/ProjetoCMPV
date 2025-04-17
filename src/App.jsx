@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalProvider } from './contexts/GlobalContext'
+import { GlobalProvider } from './contexts/globalContext'
 import Routes from './routes'
 import { PrimeReactProvider } from 'primereact/api'
 
