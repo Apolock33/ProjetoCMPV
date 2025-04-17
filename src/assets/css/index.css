@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import 'primereact/resources/themes/saga-blue/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeflex/primeflex.css';
+
+:root {
+    --primary-color: #018afa;
+    --secondary-color: #e04f00;
+    --background-color: #ffffff;
+    --text-color: #333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.p-button:focus {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #333;
+    /* Cor padrão do link */
+    padding-bottom: 5px;
+    /* Espaço para o efeito de hover */
+    position: relative;
+    /* Necessário para posicionar o pseudo-elemento */
+    overflow: hidden;
+    /* Esconde a linha inicialmente */
+}
+
+.header-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    /* Espessura da linha */
+    background-color: #007bff;
+    /* Cor da linha */
+    transition: width 0.3s ease-in-out;
+    /* Transição suave da largura */
+}
+
+.header-link:hover::before {
+    width: 100%;
+}

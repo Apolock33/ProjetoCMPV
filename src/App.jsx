@@ -1,0 +1,16 @@
+import React from 'react'
+import { GlobalProvider } from './contexts/GlobalContext'
+import Routes from './routes'
+import { PrimeReactProvider } from 'primereact/api'
+
+const App = () => {
+  return (
+    <PrimeReactProvider>
+      <GlobalProvider>
+        <Routes />
+      </GlobalProvider>
+    </PrimeReactProvider>
+  )
+}
+
+export default App
