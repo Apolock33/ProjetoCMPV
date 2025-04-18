@@ -1,16 +1,58 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Card } from 'primereact/card';
 import { FaArrowRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import event1 from '../assets/imgs/general/evento1.jpg';
+import event2 from '../assets/imgs/general/evento2.jpg';
+import useWindowSize from '../hooks/useWindowSize';
+import { GlobalContext } from '../contexts/globalContext';
 
 const Events = () => {
+    const { isMobile } = useContext(GlobalContext);
+    const { width } = useWindowSize();
+    const [responseWidth, setResponseWidth] = useState(0);
+    const [responseHeight, setResponseHeight] = useState(0);
+    const [resposeHeight] = useState(0);
+
     const eventItems = [
-        { id: 1, title: 'Evento 1', date: '20/04/2025' },
-        { id: 2, title: 'Evento 2', date: '21/04/2025' },
-        { id: 3, title: 'Evento 3', date: '22/04/2025' },
-        { id: 4, title: 'Evento 4', date: '23/04/2025' },
-        { id: 5, title: 'Evento 4', date: '23/04/2025' },
+        { id: 1, img: event1, title: 'Evento 1', date: '20/04/2025' },
+        { id: 2, img: event2, title: 'Evento 2', date: '21/04/2025' },
+        { id: 3, img: event1, title: 'Evento 3', date: '22/04/2025' },
+        { id: 4, img: event1, title: 'Domingo de Páscoa da Garotada', date: '23/04/2025' },
     ];
+
+    useEffect(() => {
+        switch (width) {
+            case 2560:
+                setResponseWidth(400);
+                setResponseHeight(200);
+                break;
+            case 1024:
+                setResponseWidth(240);
+                setResponseHeight(198);
+                break;
+            case 768:
+                setResponseWidth(150);
+                setResponseHeight(200);
+                break;
+            case 425:
+                setResponseWidth(100);
+                setResponseHeight(100);
+                break;
+            case 375:
+                setResponseWidth(100);
+                setResponseHeight(100);
+                break;
+            case 320:
+                setResponseWidth(0);
+                setResponseHeight(0);
+                break;
+            default:
+                setResponseWidth(310);
+                setResponseHeight(200);
+                break;
+        }
+    }, [width]);
 
     return (
         <div className='p-4'>
@@ -29,10 +71,24 @@ const Events = () => {
             <div className="flex flex-column gap-3">
                 {eventItems.map((event) => (
                     <div key={event.id} className="w-full">
-                        <Card className="shadow-2 border-round-xl p-3">
-                            <h2 className="text-lg font-semibold mb-2">{event.title}</h2>
-                            <p className="text-sm text-color-secondary">{event.date}</p>
+                        <Card className="shadow-2 border-round-xl">
+                            <div className={`flex gap-3 align-items-center ${width == 320 && 'py-3 px-3'}`}>
+                                {/* Imagem com tamanho fixo e proporcional */}
+                                <img
+                                    src={event.img}
+                                    alt={event.title}
+                                    className="object-cover border-round-right border-round-xl"
+                                    style={{ width: responseWidth, height: responseHeight, flexShrink: 0 }}
+                                />
+
+                                {/* Conteúdo textual */}
+                                <div className={`"flex flex-column"`}>
+                                    <h2 className="text-lg font-semibold mb-1">{event.date}</h2>
+                                    <p className="text-sm text-color-secondary m-0">{event.title}</p>
+                                </div>
+                            </div>
                         </Card>
+
                     </div>
                 ))}
             </div>

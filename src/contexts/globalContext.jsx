@@ -13,11 +13,11 @@ export const GlobalProvider = ({ children }) => {
     const { scrollY } = useScrollDown();
 
     useEffect(() => {
-        if (width <= 1025) {
+        if (width <= 1024) {
             setIsMobile(true);
         }
 
-        if (width > 1025) {
+        if (width > 1024) {
             setIsMobile(false);
         }
 

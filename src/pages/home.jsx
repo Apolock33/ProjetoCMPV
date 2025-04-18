@@ -34,6 +34,10 @@ const Home = () => {
         </div>
       </section>
 
+      <section id='rents'>
+        <ContactForm />
+      </section>
+
       <section id='contacts'>
         <ContactForm />
       </section>
