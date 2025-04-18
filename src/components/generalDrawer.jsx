@@ -86,7 +86,7 @@ const GeneralDrawer = ({ isVisible, onClose, drawerSide, children }) => {
                                 rounded
                                 outlined
                                 className='border-circle p-2 border-none'
-                                icon={<FaX size={18} onClick={onClose} />}
+                                icon={<FaX size={18} onClick={onClose} color='#09294B' />}
                             />
                         </div>
                         {children}

@@ -77,7 +77,7 @@ const Header = () => {
                             }
                         }}
 
-                        whileInView={{ width: isScrollingDown ? (isMobile ? 250: 400) : isMobile ? 300 : 490 }}
+                        whileInView={{ width: isScrollingDown ? (isMobile ? 250 : 400) : isMobile ? 300 : 490 }}
                         src={Logo}
                         alt="Logo"
                         width={isMobile ? 200 : 400}
@@ -110,7 +110,7 @@ const Header = () => {
                 ) : (
                     <div>
                         <Button
-                            icon={() => <TiThMenu size={40} width={55} color='#09294B'/>}
+                            icon={() => <TiThMenu size={40} width={55} color='#09294B' />}
                             rounded
                             outlined
                             className='border-none w-auto'
@@ -143,9 +143,7 @@ const Header = () => {
                     ))}
                 </div>
                 <div className={`flex gap-3 align-items-center mb-2 ${isMobile ? 'justify-content-center' : ' justify-content-end pr-6'}`}>
-                    <IconField iconPosition="left" className=''>
-                        <InputText placeholder="Pesquisar..." />
-                    </IconField>
+                    <InputText placeholder="Pesquisar..." />
                     <Button icon={() => <FaSearch size={20} />} className='border-none border-round-md' style={{ backgroundColor: '#09294B' }} />
                 </div>
             </motion.div>
@@ -169,6 +167,7 @@ const Header = () => {
                             label='Area do Sócio'
                             rounded
                             className='border-none flex gap-2'
+                            style={{ backgroundColor: '#09294B' }}
                             onClick={() => navigate('/login')}
                         />
                     </div>
