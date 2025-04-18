@@ -1,19 +1,39 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../components/header'
 import HomeCarousel from '../components/homeCarousel'
 import News from '../components/news'
 import ContactForm from '../components/contactForm'
+import Events from '../components/events'
+import { motion } from 'motion/react'
+import { GlobalContext } from '../contexts/globalContext'
 
 const Home = () => {
+  const { isMobile } = useContext(GlobalContext);
+
   return (
     <>
       <Header />
-      <section id='carousel'>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.5 }}
+        id='carousel'>
         <HomeCarousel />
+      </motion.section>
+
+      <section
+        id='news'
+        className="flex flex-column md:flex-row gap-4 p-4"
+      >
+        <div className="w-full md:w-6">
+          <News />
+        </div>
+        <div className="w-full md:w-6">
+          <Events />
+        </div>
       </section>
-      <section id='news'>
-        <News />
-      </section>
+
       <section id='contacts'>
         <ContactForm />
       </section>

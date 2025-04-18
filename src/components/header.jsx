@@ -90,9 +90,9 @@ const Header = () => {
                             <ul className="flex align-items-center gap-4 list-none m-0 p-0">
                                 {publicLinks.map((link) => (
                                     <li key={link.id}>
-                                        <a href={link.path} className="header-link text-lg">
+                                        <Link href={link.path} className="header-link text-lg">
                                             {link.name}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -124,8 +124,9 @@ const Header = () => {
                 initial={{ opacity: 0, height: isMobile ? 80 : 160 }}
                 whileInView={{
                     height: isMobile ? 140 : 180,
-                    opacity: showSecondaryHeader ? 1 : 0
+                    opacity: showSecondaryHeader ? 1 : 0,
                 }}
+                transition={{ duration: 0.4 }}
             >
                 <div className={` justify-content-end align-items-end gap-3 mb-2 ${isMobile ? 'hidden' : 'flex'}`}>
                     {socialMedia.map((media) => (
@@ -158,9 +159,9 @@ const Header = () => {
                     <div className='flex flex-column gap-3'>
                         {publicLinks.map((link) => (
                             <div key={link.id} className='flex justify-content-center p-3 cursor-pointer links-hover'>
-                                <a href={link.path} className='text-lg no-underline text-primary'>
+                                <Link href={link.path} className='text-lg no-underline text-primary'>
                                     {link.name}
-                                </a>
+                                </Link>
                             </div>
                         ))}
                     </div>
