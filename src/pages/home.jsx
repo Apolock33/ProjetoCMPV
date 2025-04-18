@@ -23,10 +23,7 @@ const Home = () => {
         <HomeCarousel />
       </motion.section>
 
-      <section
-        id='news'
-        className="flex flex-column md:flex-row gap-4 p-4"
-      >
+      <section id='news' className="flex flex-column md:flex-row gap-4 p-4">
         <div className="w-full md:w-6">
           <News />
         </div>
