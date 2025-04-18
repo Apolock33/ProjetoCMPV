@@ -5,14 +5,11 @@ import { Link } from 'react-router-dom';
 import event1 from '../assets/imgs/general/evento1.jpg';
 import event2 from '../assets/imgs/general/evento2.jpg';
 import useWindowSize from '../hooks/useWindowSize';
-import { GlobalContext } from '../contexts/globalContext';
+import { GlobalContext } from '../contexts/globalContext.jsx';
 
 const Events = () => {
     const { isMobile } = useContext(GlobalContext);
     const { width } = useWindowSize();
-    const [responseWidth, setResponseWidth] = useState(0);
-    const [responseHeight, setResponseHeight] = useState(0);
-    const [resposeHeight] = useState(0);
 
     const eventItems = [
         { id: 1, img: event1, title: 'Evento 1', date: '20/04/2025' },
@@ -22,36 +19,7 @@ const Events = () => {
     ];
 
     useEffect(() => {
-        switch (width) {
-            case 2560:
-                setResponseWidth(400);
-                setResponseHeight(200);
-                break;
-            case 1024:
-                setResponseWidth(240);
-                setResponseHeight(198);
-                break;
-            case 768:
-                setResponseWidth(150);
-                setResponseHeight(200);
-                break;
-            case 425:
-                setResponseWidth(100);
-                setResponseHeight(100);
-                break;
-            case 375:
-                setResponseWidth(100);
-                setResponseHeight(100);
-                break;
-            case 320:
-                setResponseWidth(0);
-                setResponseHeight(0);
-                break;
-            default:
-                setResponseWidth(310);
-                setResponseHeight(200);
-                break;
-        }
+
     }, [width]);
 
     return (
@@ -71,17 +39,14 @@ const Events = () => {
             <div className="flex flex-column gap-3">
                 {eventItems.map((event) => (
                     <div key={event.id} className="w-full">
-                        <Card className="shadow-2 border-round-xl">
-                            <div className={`flex gap-3 align-items-center ${width == 320 && 'py-3 px-3'}`}>
-                                {/* Imagem com tamanho fixo e proporcional */}
+                        <Card className="shadow-2 border-round-xl w-full">
+                            <div className={`flex gap-3 align-items-center`}>
                                 <img
                                     src={event.img}
                                     alt={event.title}
                                     className="object-cover border-round-right border-round-xl"
-                                    style={{ width: responseWidth, height: responseHeight, flexShrink: 0 }}
+                                    style={{ width: '30%' }}
                                 />
-
-                                {/* Conteúdo textual */}
                                 <div className={`"flex flex-column"`}>
                                     <h2 className="text-lg font-semibold mb-1">{event.date}</h2>
                                     <p className="text-sm text-color-secondary m-0">{event.title}</p>
