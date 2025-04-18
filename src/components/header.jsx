@@ -35,19 +35,19 @@ const Header = () => {
             id: 1,
             name: 'Instagram',
             path: 'https://www.instagram.com/clube_militar_da_praia_vermelha/',
-            icon: <AiFillInstagram size={25} />
+            icon: <AiFillInstagram size={20} />
         },
         {
             id: 2,
             name: 'Facebook',
             path: 'https://www.facebook.com/clube.militar.da.praia.vermelha/',
-            icon: <FaFacebook size={25} />
+            icon: <FaFacebook size={20} />
         },
         {
             id: 3,
             name: 'Youtube',
             path: 'https://www.youtube.com/@clube_militar_da_praia_vermelha',
-            icon: <FaLinkedin size={25} />
+            icon: <FaLinkedin size={20} />
         }
     ]
 
@@ -70,17 +70,17 @@ const Header = () => {
                     <motion.img
                         initial={{ width: 0 }}
                         animate={{
-                            width: isMobile ? 140 : 400,
+                            width: isMobile ? 200 : 400,
                             transition: {
                                 duration: 0.3,
                                 ease: 'easeInOut',
                             }
                         }}
 
-                        whileInView={{ width: isScrollingDown ? 140 : isMobile ? 300 : 490 }}
+                        whileInView={{ width: isScrollingDown ? (isMobile ? 250: 400) : isMobile ? 300 : 490 }}
                         src={Logo}
                         alt="Logo"
-                        width={isMobile ? 140 : 400}
+                        width={isMobile ? 200 : 400}
                     />
                 </div>
 
@@ -100,6 +100,7 @@ const Header = () => {
                                 <Button
                                     label='Area do Sócio'
                                     rounded
+                                    style={{ backgroundColor: '#09294B' }}
                                     className='border-none flex gap-2'
                                     onClick={() => navigate('/login')}
                                 />
@@ -109,7 +110,7 @@ const Header = () => {
                 ) : (
                     <div>
                         <Button
-                            icon={() => <TiThMenu size={40} width={55} />}
+                            icon={() => <TiThMenu size={40} width={55} color='#09294B'/>}
                             rounded
                             outlined
                             className='border-none w-auto'
@@ -126,7 +127,7 @@ const Header = () => {
                     opacity: showSecondaryHeader ? 1 : 0
                 }}
             >
-                <div className={` justify-content-end align-items-end gap-3 mb-2 ${isMobile ? 'hidden': 'flex'}`}>
+                <div className={` justify-content-end align-items-end gap-3 mb-2 ${isMobile ? 'hidden' : 'flex'}`}>
                     {socialMedia.map((media) => (
                         <Link
                             key={media.id}
@@ -135,6 +136,7 @@ const Header = () => {
                                 key={media.id}
                                 icon={() => media.icon}
                                 rounded
+                                style={{ backgroundColor: '#09294B' }}
                                 className='border-none'
                             />
                         </Link>
@@ -144,7 +146,7 @@ const Header = () => {
                     <IconField iconPosition="left" className=''>
                         <InputText placeholder="Pesquisar..." />
                     </IconField>
-                    <Button icon={() => <FaSearch size={20} />} className='border-none border-round-md' />
+                    <Button icon={() => <FaSearch size={20} />} className='border-none border-round-md' style={{ backgroundColor: '#09294B' }} />
                 </div>
             </motion.div>
             {visible && (

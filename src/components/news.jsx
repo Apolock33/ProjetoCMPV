@@ -49,7 +49,7 @@ const News = () => {
             <div className='grid m-0'>
                 {cardInfos.map((card) => (
                     <motion.div className='col-6 ml-0' key={card.id}>
-                        <Card className=" mr-3 border-round-sm shadow-0" content={cardContent(card)} />
+                        
                     </motion.div>
                 ))}
             </div>
