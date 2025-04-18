@@ -110,7 +110,7 @@ const Header = () => {
                 ) : (
                     <div>
                         <Button
-                            icon={() => <TiThMenu size={40} width={55} color='#09294B' />}
+                            icon={() => <TiThMenu size={30} width={45} color='#09294B' />}
                             rounded
                             outlined
                             className='border-none w-auto'
