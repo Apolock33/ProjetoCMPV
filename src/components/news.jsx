@@ -41,30 +41,26 @@ const News = () => {
                 {cardInfos.map((card) => (
                     <motion.div
                         key={card.id}
-                        className="mb-4"
+                        className="mb-4 md:h-30rem"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: card.id * 0.1 }}
                     >
                         <div
-                            className={`relative overflow-hidden border-round-xl w-full`}
+                            className={`relative overflow-hidden border-round-xl w-full h-full`}
                             style={{
-                                height: width == 1440 ? '600px' : width >= 2560 ? '930px' : '400px',
                                 aspectRatio: '16 / 9',
                                 borderRadius: '12px',
                             }}
                         >
-                            {/* Imagem com hover animado */}
                             <motion.img
                                 src={card.imageUrl}
                                 alt={card.title}
-                                className="w-full h-full object-cover"
+                                className="w-full object-cover"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.4 }}
                             />
-
-                            {/* Overlay no rodapé */}
                             <div
                                 className="absolute bottom-0 left-0 w-full text-white px-4 py-3"
                                 style={{
