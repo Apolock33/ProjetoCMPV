@@ -70,17 +70,17 @@ const Header = () => {
                     <motion.img
                         initial={{ width: 0 }}
                         animate={{
-                            width: isMobile ? 200 : 400,
+                            width: isMobile ? 190 : 400,
                             transition: {
                                 duration: 0.3,
                                 ease: 'easeInOut',
                             }
                         }}
 
-                        whileInView={{ width: isScrollingDown ? (isMobile ? 250 : 400) : isMobile ? 300 : 490 }}
+                        whileInView={{ width: isScrollingDown ? (isMobile ? 250 : 400) : isMobile ? 280 : 490 }}
                         src={Logo}
                         alt="Logo"
-                        width={isMobile ? 200 : 400}
+                        width={isMobile ? 190 : 400}
                     />
                 </div>
 
@@ -121,9 +121,9 @@ const Header = () => {
             </motion.header>
             <motion.div
                 className={`w-full search-navbar flex align-items-end gap-3 ${isMobile ? 'px-4 justify-content-center' : 'px-8 justify-content-end'}`}
-                initial={{ opacity: 1, height: isMobile ? 50 : 160 }}
+                initial={{ opacity: 1, height: isMobile ? 80 : 160 }}
                 whileInView={{
-                    height: isMobile ? 135 : 165,
+                    height: isMobile ? 145 : 200,
                     opacity: showSecondaryHeader ? 1 : 0
                 }}
             >
@@ -144,7 +144,10 @@ const Header = () => {
                 </div>
                 <div className={`flex gap-3 align-items-center mb-2 ${isMobile ? 'justify-content-center' : ' justify-content-end pr-6'}`}>
                     <InputText placeholder="Pesquisar..." />
-                    <Button icon={() => <FaSearch size={20} />} className='border-none border-round-md' style={{ backgroundColor: '#09294B' }} />
+                    <Button
+                        icon={() => <FaSearch size={20} />}
+                        className='border-none border-round-md'
+                        style={{ backgroundColor: '#09294B' }} />
                 </div>
             </motion.div>
             {visible && (
