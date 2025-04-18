@@ -77,7 +77,7 @@ const Header = () => {
                             }
                         }}
 
-                        whileInView={{ width: isScrollingDown ? (isMobile ? 250 : 400) : isMobile ? 280 : 490 }}
+                        whileInView={{ width: isScrollingDown ? (isMobile ? 230 : 400) : (isMobile ? 260 : 430) }}
                         src={Logo}
                         alt="Logo"
                         width={isMobile ? 190 : 400}
@@ -121,9 +121,9 @@ const Header = () => {
             </motion.header>
             <motion.div
                 className={`w-full search-navbar flex align-items-end gap-3 ${isMobile ? 'px-4 justify-content-center' : 'px-8 justify-content-end'}`}
-                initial={{ opacity: 1, height: isMobile ? 80 : 160 }}
+                initial={{ opacity: 0, height: isMobile ? 80 : 160 }}
                 whileInView={{
-                    height: isMobile ? 145 : 200,
+                    height: isMobile ? 140 : 180,
                     opacity: showSecondaryHeader ? 1 : 0
                 }}
             >
