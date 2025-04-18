@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Link, useNavigate } from 'react-router-dom'
-import '../assets/css/carousel.css'
 import espaco1 from '../assets/imgs/general/belasartes.jpg';
 import espaco2 from '../assets/imgs/general/belavsita.jpg';
 import espaco3 from '../assets/imgs/general/terraco.jpg';
