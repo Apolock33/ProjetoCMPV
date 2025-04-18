@@ -6,6 +6,7 @@ import ContactForm from '../components/contactForm'
 import Events from '../components/events'
 import { motion } from 'motion/react'
 import { GlobalContext } from '../contexts/globalContext'
+import Rents from './rents'
 
 const Home = () => {
   const { isMobile } = useContext(GlobalContext);
@@ -34,12 +35,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='rents'>
-        <ContactForm />
-      </section>
-
-      <section id='contacts'>
-        <ContactForm />
+      <section id='rents' className='p-4'>
+        <Rents />
       </section>
     </>
   )

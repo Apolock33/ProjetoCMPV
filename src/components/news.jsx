@@ -5,10 +5,8 @@ import { Link } from 'react-router-dom';
 import useWindowSize from '../hooks/useWindowSize';
 import news1 from '../assets/imgs/general/bailecmpv.jpg';
 import news2 from '../assets/imgs/general/Comunicado-aos-socios.png';
-import { GlobalContext } from '../contexts/globalContext';
 
 const News = () => {
-    const { isMobile } = useContext(GlobalContext);
     const { width } = useWindowSize();
 
     const cardInfos = [
