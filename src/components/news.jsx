@@ -41,15 +41,17 @@ const News = () => {
                 {cardInfos.map((card) => (
                     <motion.div
                         key={card.id}
-                        className="mb-4 md:h-30rem"
+                        className="mb-4 "
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: card.id * 0.1 }}
+                        style={{minHeight: '500px'}}
                     >
                         <div
-                            className={`relative overflow-hidden border-round-xl w-full h-full`}
+                            className={`relative overflow-hidden border-round-xl w-full `}
                             style={{
+                                height: width > 1440 ? '900px' : '500px',
                                 aspectRatio: '16 / 9',
                                 borderRadius: '12px',
                             }}
@@ -58,6 +60,9 @@ const News = () => {
                                 src={card.imageUrl}
                                 alt={card.title}
                                 className="w-full object-cover"
+                                style={{
+                                    height: width > 1440 ? '900px' : '500px',
+                                }}
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.4 }}
                             />

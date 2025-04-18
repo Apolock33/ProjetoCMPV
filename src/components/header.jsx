@@ -77,7 +77,7 @@ const Header = () => {
                             }
                         }}
 
-                        whileInView={{ width: isScrollingDown ? (isMobile ? 230 : 400) : (isMobile ? 260 : 430) }}
+                        whileInView={{ width: isScrollingDown ? (isMobile ? 230 : 200) : (isMobile ? 260 : 430) }}
                         src={Logo}
                         alt="Logo"
                         width={isMobile ? 190 : 400}

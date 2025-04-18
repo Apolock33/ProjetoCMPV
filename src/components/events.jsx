@@ -13,7 +13,7 @@ const Events = () => {
 
     const eventItems = [
         { id: 1, img: event1, title: 'Evento 1', date: '20/04/2025' },
-        { id: 2, img: event2, title: 'Evento 2', date: '21/04/2025' },
+        { id: 2, img: event1, title: 'Evento 2', date: '21/04/2025' },
         { id: 3, img: event1, title: 'Evento 3', date: '22/04/2025' },
         { id: 4, img: event1, title: 'Domingo de Páscoa da Garotada', date: '23/04/2025' },
     ];
