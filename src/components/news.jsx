@@ -72,6 +72,9 @@ const News = () => {
             case 768:
                 setResponseWidth(300);
                 break;
+                case 425:
+                setResponseWidth(330);
+                break;
             case 375:
                 setResponseWidth(280);
                 break;
