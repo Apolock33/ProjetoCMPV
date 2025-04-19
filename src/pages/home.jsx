@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import Header from '../components/header'
 import HomeCarousel from '../components/homeCarousel'
-import News from '../components/news'
 import '../assets/css/home.css'
 import Events from '../components/events'
 import { motion } from 'motion/react'

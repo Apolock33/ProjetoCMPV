@@ -3,12 +3,9 @@ import { Card } from 'primereact/card';
 import { FaArrowRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import event1 from '../assets/imgs/general/evento1.jpg';
-import event2 from '../assets/imgs/general/evento2.jpg';
 import useWindowSize from '../hooks/useWindowSize';
-import { GlobalContext } from '../contexts/globalContext.jsx';
 
 const Events = () => {
-    const { isMobile } = useContext(GlobalContext);
     const { width } = useWindowSize();
 
     const eventItems = [
@@ -38,24 +35,35 @@ const Events = () => {
 
             <div className="flex flex-column gap-3">
                 {eventItems.map((event) => (
-                    <div key={event.id} className="w-full">
-                        <Card className="shadow-2 border-round-xl w-full">
-                            <div className={`flex gap-3 align-items-center`}>
+                    <div
+                        key={event.id}
+                        className="w-full"
+                        style={{
+                            height: width < 768 ? '100px' : '195px',
+                        }}
+                    >
+                        <div className="w-full  overflow-hidden border-round-xl  shadow-2 bg-white">
+                            <div className="flex h-full justify-content-start align-items-center">
                                 <img
                                     src={event.img}
                                     alt={event.title}
-                                    className="object-cover border-round-right border-round-xl"
-                                    style={{ width: '30%' }}
+                                    style={{
+                                        width: width < 768 ? '100px' : '150px', // largura fixa menor
+                                        height: width < 768 ? '100px' : '150px', // altura fixa menor
+                                        objectFit: 'cover',
+                                        flexShrink: 0,
+                                    }}
                                 />
-                                <div className={`"flex flex-column"`}>
+
+                                <div className="flex flex-column justify-content-center px-3 w-70 h-full">
                                     <h2 className="text-lg font-semibold mb-1">{event.date}</h2>
-                                    <p className="text-sm text-color-secondary m-0">{event.title}</p>
+                                    <p className={`text-color-secondary m-0 ${width < 768 ? 'text-sm' : 'text-xl'}`}>{event.title}</p>
                                 </div>
                             </div>
-                        </Card>
-
+                        </div>
                     </div>
                 ))}
+
             </div>
         </div>
     );

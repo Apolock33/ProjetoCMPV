@@ -108,6 +108,7 @@ const Rents = () => {
                     showNavigators
                     showIndicators
                     circular
+                    draggable
                 />
             </div>
         </div >

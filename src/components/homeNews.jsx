@@ -69,9 +69,9 @@ const HomeNews = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: card.id * 0.1 }}
-                        className={`${width < 768 ? 'col-12 mb-3' : 'col-6'} `}
+                        className={`${width < 769 ? 'col-12 mb-3' : 'col-6'} `}
                         style={{
-                            height: width < 768 ? '350px' : '400px',
+                            height: width < 769 ? '350px' : '400px',
                         }}
                     >
                         <div
