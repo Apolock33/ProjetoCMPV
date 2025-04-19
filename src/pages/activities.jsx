@@ -72,7 +72,8 @@ const Activities = () => {
 
                         AS INFORMAÇÕES SOBRE AS ATIVIDADES DO CÍRCULO MILITAR NÃO SÃO DE RESPONSABILIDADE DA SECRETARIA E DEVEM TRATADAS DIRETAMENTE COM CADA PROFESSOR(A).<br /><br />
 
-                        ESCOLHA A MODALIDADE ESPORTIVA ABAIXO PARA VISUALIZAR O CONTATO DO PROFESSOR(A) E OS HORÁRIOS DE AULAS DISPONÍVEIS.</p>
+                        ESCOLHA A MODALIDADE ESPORTIVA ABAIXO PARA VISUALIZAR O CONTATO DO PROFESSOR(A) E OS HORÁRIOS DE AULAS DISPONÍVEIS.
+                    </p>
                 </div>
                 <div
                     className="grid gap-4 justify-content-center mt-6"
