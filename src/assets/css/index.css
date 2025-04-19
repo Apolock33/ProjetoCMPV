@@ -73,7 +73,7 @@ h6 {
 }
 
 .p-galleria.p-galleria-indicator-onitem .p-galleria-indicators .p-galleria-indicator.p-highlight button {
-    background-color: #69d2ff !important;
+    background-color: var('--primary-color') !important;
 }
 
 .p-card .p-card-body,

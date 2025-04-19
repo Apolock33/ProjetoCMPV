@@ -23,7 +23,7 @@ const Header = () => {
 
     const publicLinks = [
         { id: 1, name: 'Sobre', path: '/about' },
-        { id: 2, name: 'Novidades', path: '/novidades' },
+        { id: 2, name: 'Notícias', path: '/novidades' },
         { id: 3, name: 'Atividades', path: '/atividades' },
         { id: 4, name: 'Espacos', path: '/espacos' },
         { id: 5, name: 'Contatos', path: '/contatos' }
@@ -59,7 +59,7 @@ const Header = () => {
                     opacity: 1,
                     y: 0,
                     transition: {
-                        duration: 0.3,
+                        duration: 0.5,
                         ease: 'easeInOut'
                     }
                 }}
@@ -125,7 +125,7 @@ const Header = () => {
                     height: isMobile ? 145 : 185,
                     opacity: showSecondaryHeader ? 1 : 0,
                 }}
-                transition={{ duration: 0.4 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
             >
                 <div className={` justify-content-end align-items-end gap-3 mb-2 ${isMobile ? 'hidden' : 'flex'}`}>
                     {socialMedia.map((media) => (

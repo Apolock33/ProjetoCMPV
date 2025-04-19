@@ -69,10 +69,11 @@ const Rents = () => {
                     className="w-full border-round-xl"
                 />
                 <div 
-                    className="absolute bottom-0 left-0 w-full p-3 text-white"
+                    className="absolute bottom-0 left-0 w-full text-white"
                     style={{
                         background: 'rgba(0, 0, 0, 0.6)',
-                        backdropFilter: 'blur(2px)'
+                        backdropFilter: 'blur(2px)',
+                        padding: '0.1rem 1rem'
                     }}
                 >
                     <h3 className="m-0 text-lg font-bold">{item.title}</h3>
@@ -83,15 +84,15 @@ const Rents = () => {
     
 
     return (
-        <div className='p-4'>
-            <div className="flex gap-3 align-items-center justify-content-between mb-4">
+        <div>
+            <div className="flex gap-3 align-items-center justify-content-between mb-4 px-6">
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Aluguel de Espaços</h1>
                 <Link to="/novidades" className="flex align-items-center no-underline gap-2" style={{ color: 'var(--primary-color)' }}>
                     Veja Mais
                     <FaArrowRight />
                 </Link>
             </div>
-            <div>
+            <div className='px-6'>
                 <p>Clique nos cards para mais informações</p>
             </div>
             <div>
@@ -100,6 +101,7 @@ const Rents = () => {
                     numVisible={3}
                     numScroll={3}
                     responsiveOptions={responsiveOptions}
+                    style={{ width: '100vw' }}
                     itemTemplate={itemTemplate}
                     showNavigators
                     showIndicators

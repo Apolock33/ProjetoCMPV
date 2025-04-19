@@ -6,7 +6,8 @@ import '../assets/css/home.css'
 import Events from '../components/events'
 import { motion } from 'motion/react'
 import { GlobalContext } from '../contexts/globalContext'
-import Rents from './rents'
+import Rents from '../components/rents'
+import HomeNews from '../components/homeNews'
 
 const Home = () => {
   const { isMobile } = useContext(GlobalContext);
@@ -24,14 +25,14 @@ const Home = () => {
 
       <section id='news' className="flex flex-column md:flex-row gap-4 p-4">
         <div className="w-full md:w-6">
-          <News />
+          <HomeNews />
         </div>
         <div className="w-full md:w-6">
           <Events />
         </div>
       </section>
 
-      <section id='rents' className='p-4'>
+      <section id='rents'>
         <Rents />
       </section>
     </>
