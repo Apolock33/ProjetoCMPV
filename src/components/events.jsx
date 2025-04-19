@@ -24,7 +24,7 @@ const Events = () => {
 
     return (
         <div className='p-4'>
-            <div className='flex gap-3 align-items-end justify-content-between mb-4'>
+            <div className='flex gap-3 align-items-center justify-content-between mb-4'>
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Eventos</h1>
                 <Link
                     to="/eventos"

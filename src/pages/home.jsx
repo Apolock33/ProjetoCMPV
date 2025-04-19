@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Header from '../components/header'
 import HomeCarousel from '../components/homeCarousel'
 import News from '../components/news'
-import ContactForm from '../components/contactForm'
+import '../assets/css/home.css'
 import Events from '../components/events'
 import { motion } from 'motion/react'
 import { GlobalContext } from '../contexts/globalContext'
@@ -14,7 +14,6 @@ const Home = () => {
   return (
     <>
       <Header />
-
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
