@@ -7,6 +7,7 @@ import { motion } from 'motion/react'
 import { GlobalContext } from '../contexts/globalContext'
 import Rents from '../components/rents'
 import HomeNews from '../components/homeNews'
+import Footer from '../components/footer'
 
 const Home = () => {
   const { isMobile } = useContext(GlobalContext);
@@ -34,6 +35,7 @@ const Home = () => {
       <section id='rents'>
         <Rents />
       </section>
+      <Footer />
     </>
   )
 }

@@ -39,10 +39,10 @@ const Events = () => {
                         key={event.id}
                         className="w-full"
                         style={{
-                            height: width < 768 ? '100px' : '195px',
+                            height: width < 768 ? '100px' : '155px',
                         }}
                     >
-                        <div className="w-full  overflow-hidden border-round-xl  shadow-2 bg-white">
+                        <div className="w-full  overflow-hidden border-round-xl  shadow-1 bg-white">
                             <div className="flex h-full justify-content-start align-items-center">
                                 <img
                                     src={event.img}

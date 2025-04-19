@@ -22,10 +22,8 @@ const Header = () => {
     const navigate = useNavigate();
 
     const publicLinks = [
-        { id: 1, name: 'Sobre', path: '/about' },
-        { id: 2, name: 'Notícias', path: '/novidades' },
+        { id: 1, name: 'Sobre Nós', path: '/sobrenos' },
         { id: 3, name: 'Atividades', path: '/atividades' },
-        { id: 4, name: 'Espacos', path: '/espacos' },
         { id: 5, name: 'Contatos', path: '/contatos' }
     ];
 
@@ -89,7 +87,7 @@ const Header = () => {
                             <ul className="flex align-items-center gap-4 list-none m-0 p-0">
                                 {publicLinks.map((link) => (
                                     <li key={link.id}>
-                                        <Link href={link.path} className="header-link text-lg font-medium">
+                                        <Link to={link.path} className="header-link text-lg font-medium">
                                             {link.name}
                                         </Link>
                                     </li>
@@ -125,7 +123,7 @@ const Header = () => {
                     height: isMobile ? 145 : 185,
                     opacity: showSecondaryHeader ? 1 : 0,
                 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
+                transition={{  duration: 0.5 }}
             >
                 <div className={` justify-content-end align-items-end gap-3 mb-2 ${isMobile ? 'hidden' : 'flex'}`}>
                     {socialMedia.map((media) => (

@@ -1,20 +1,34 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/home'
-import Spaces from './pages/spaces'
 import LogIn from './pages/login'
+import About from './pages/about'
+import Activities from './pages/activities'
 
 const Routes = () => {
     const publicRoutes = [
         {
             id: 1,
             path: '/',
-            element: <Home />
+            element: <Home />,
+            errorElement: <h1>Error</h1>
+        },
+        {
+            id: 2,
+            path: '/sobrenos',
+            element: <About />,
+            errorElement: <h1>Error</h1>
+        },
+        {
+            id: 3,
+            path: '/atividades',
+            element: <Activities />
         },
         {
             id: 4,
-            path: '/espacos',
-            element: <Spaces />
+            path: '/contatos',
+            element: <About />,
+            errorElement: <h1>Error</h1>
         },
         {
             id: 5,
