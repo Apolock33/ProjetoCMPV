@@ -82,7 +82,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={`flex align-items-center ${width < 768 ? ' flex-column justify-content-center' : 'flex-row justify-content-between px-7 py-3'}`}>
-                <h2>© 2023 - Todos os direitos reservados</h2>
+                <h2 className='font-light'>© 2023 - Todos os direitos reservados</h2>
                 <div className='flex gap-3'>
                     {socialMedia.map((media) => (
                         <div key={media.id} className='flex align-items-center justify-content-center cursor-pointer' onClick={() => window.open(media.link, '_blank')}>
