@@ -7,8 +7,10 @@ import espaco3 from '../assets/imgs/general/terraco.jpg';
 import espaco4 from '../assets/imgs/general/tamandare.jpg';
 import espaco5 from '../assets/imgs/general/casablancaebelavista.jpg';
 import { Carousel } from 'primereact/carousel'
+import useWindowSize from '../hooks/useWindowSize';
 
 const Rents = () => {
+    const { width } = useWindowSize();
     const navigate = useNavigate();
 
     const imgsSpaces = [
@@ -59,7 +61,7 @@ const Rents = () => {
 
     const itemTemplate = (item) => {
         return (
-            <div 
+            <div
                 className="cursor-pointer relative overflow-hidden border-round-xl mx-2"
                 onClick={() => navigate('/novidades')}
             >
@@ -68,7 +70,7 @@ const Rents = () => {
                     alt={item.title}
                     className="w-full border-round-xl"
                 />
-                <div 
+                <div
                     className="absolute bottom-0 left-0 w-full text-white"
                     style={{
                         background: 'rgba(0, 0, 0, 0.6)',
@@ -81,7 +83,7 @@ const Rents = () => {
             </div>
         );
     };
-    
+
 
     return (
         <div>
@@ -95,13 +97,13 @@ const Rents = () => {
             <div className='px-6'>
                 <p>Clique nos cards para mais informações</p>
             </div>
-            <div>
+            <div className='flex justify-content-center'>
                 <Carousel
                     value={imgsSpaces}
                     numVisible={3}
                     numScroll={3}
                     responsiveOptions={responsiveOptions}
-                    style={{ width: '100vw' }}
+                    style={{ width: width > 1024 ? '97%' : '100%' }}
                     itemTemplate={itemTemplate}
                     showNavigators
                     showIndicators
