@@ -69,13 +69,13 @@ const HomeNews = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: card.id * 0.1 }}
-                        className={`${width < 769 ? 'col-12 mb-3' : 'col-6'}`}
+                        className={`${width < 768 ? 'col-12 mb-3' : 'col-6'} `}
                         style={{
-                            minHeight: width < 769 ? '300px' : '400px',
+                            height: width < 768 ? '350px' : '400px',
                         }}
                     >
                         <div
-                            className="relative overflow-hidden border-round-xl w-full h-full"
+                            className="relative overflow-hidden w-full h-full border-round-xl"
                             style={{
                                 borderRadius: '12px',
                             }}
@@ -87,6 +87,19 @@ const HomeNews = () => {
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ duration: 0.4 }}
                             />
+                            <div
+                                className="absolute bottom-0 left-0 w-full text-white px-4 py-3"
+                                style={{
+                                    background: 'rgba(0, 0, 0, 0.6)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    backdropFilter: 'blur(2px)',
+                                }}
+                            >
+                                <h2 className="m-0 text-base font-bold mb-1">{card.title}</h2>
+                                <p className="m-0 text-sm">{card.description}</p>
+                            </div>
                         </div>
                     </motion.div>
                 ))}
