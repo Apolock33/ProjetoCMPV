@@ -25,7 +25,7 @@ const Events = () => {
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Eventos</h1>
                 <Link
                     to="/eventos"
-                    className='flex align-items-center no-underline gap-2'
+                    className='flex align-items-center no-underline gap-2 font-medium'
                     style={{ color: 'var(--primary-color)' }}
                 >
                     Veja Mais

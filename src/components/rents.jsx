@@ -89,15 +89,15 @@ const Rents = () => {
         <div>
             <div className="flex gap-3 align-items-center justify-content-between mb-4 px-6">
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Aluguel de Espaços</h1>
-                <Link to="/novidades" className="flex align-items-center no-underline gap-2" style={{ color: 'var(--primary-color)' }}>
+                <Link to="/novidades" className="flex align-items-center no-underline gap-2 font-medium" style={{ color: 'var(--primary-color)' }}>
                     Veja Mais
                     <FaArrowRight />
                 </Link>
             </div>
             <div className='px-6'>
-                <p>Clique nos cards para mais informações</p>
+                <p className='text-lg font-medium'>Clique nos cards para mais informações</p>
             </div>
-            <div className='flex justify-content-center'>
+            <div className={`flex justify-content-center ${width < 1024 ? 'px-3' : ''}`}>
                 <Carousel
                     value={imgsSpaces}
                     numVisible={3}
@@ -105,7 +105,7 @@ const Rents = () => {
                     responsiveOptions={responsiveOptions}
                     style={{ width: width > 1024 ? '97%' : '100%' }}
                     itemTemplate={itemTemplate}
-                    showNavigators
+                    showNavigators={width >= 1024}
                     showIndicators
                     circular
                     draggable

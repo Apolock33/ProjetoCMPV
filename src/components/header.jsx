@@ -89,7 +89,7 @@ const Header = () => {
                             <ul className="flex align-items-center gap-4 list-none m-0 p-0">
                                 {publicLinks.map((link) => (
                                     <li key={link.id}>
-                                        <Link href={link.path} className="header-link text-lg">
+                                        <Link href={link.path} className="header-link text-lg font-medium">
                                             {link.name}
                                         </Link>
                                     </li>
