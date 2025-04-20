@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Link, useNavigate } from 'react-router-dom'
 import espaco1 from '../assets/imgs/general/belasartes.jpg';
@@ -11,7 +11,7 @@ import useWindowSize from '../hooks/useWindowSize';
 
 const Rents = () => {
     const { width } = useWindowSize();
-    const navigate = useNavigate();
+    const [rentInfos, setRentInfos] = useState({});
 
     const imgsSpaces = [
         {
@@ -63,7 +63,7 @@ const Rents = () => {
         return (
             <div
                 className="cursor-pointer relative overflow-hidden border-round-xl mx-2"
-                onClick={() => navigate('/novidades')}
+                onClick={() => setRentInfos(item)}
             >
                 <img
                     src={item.itemImageSrc}
@@ -91,7 +91,7 @@ const Rents = () => {
             </div>
             <div className='px-6'>
                 <p className='text-lg font-medium'
-                    style={{  fontFamily: 'var(--font-family-suport)' }}>Clique nos cards para mais informações</p>
+                    style={{ fontFamily: 'var(--font-family-suport)' }}>Clique nos cards para mais informações</p>
             </div>
             <div className="px-3 md:px-6">
                 <Carousel
