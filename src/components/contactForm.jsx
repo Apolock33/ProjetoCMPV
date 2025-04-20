@@ -31,7 +31,7 @@ const ContactForm = () => {
         </div>
       </form>
       <div className={`${width < 769 ? 'col-12' : 'col-6 pl-5'}`}>
-        <h2 style={{ color: 'var(--primary-color)' }}>Contatos</h2>
+        <h2 style={{ color: 'var(--primary-color)' }}>Informações Extras de Contato:</h2>
 
         <h3 className='mt-3' style={{ color: 'var(--primary-color)' }}>Telefone:</h3>
         <p>WhatsApp: +55 (21)96865-5554</p>

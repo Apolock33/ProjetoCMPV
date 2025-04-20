@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import useWindowSize from '../hooks/useWindowSize';
@@ -13,7 +13,7 @@ import ImgDialog from '../components/imgDialog';
 const Activities = () => {
     const { width } = useWindowSize();
     const [openImg, setOpenImg] = useState(false);
-    const [selectedImg, setSelectedImg] = useState(null);
+    const [selectedImg, setSelectedImg] = useState({});
 
     const breadcrumbItems = [
         { label: 'Home', url: '/' },
@@ -25,46 +25,35 @@ const Activities = () => {
             id: 1,
             itemImageSrc: activity1,
             title: 'Basquete',
-            infos: '',
-            idade: '',
-            contato: ''
+            infos: 'Terças e quintas: 17:00h às 18:00h sub-17 (de 13 a 17 anos) | de 18:00h às 19:00h sub-12 de 8 a 12 anos) | de 19:00h às 20:00h adultos (de 18 a 55 anos) \n\nContato: (21)96988-8789 – Arlema \n\nInstagram: olimpiaclube'
 
         },
         {
             id: 2,
             itemImageSrc: activity2,
             title: 'Futebol',
-            infos: '',
-            idade: '',
-            contato: ''
+            infos: 'Horários: \n\nSegundas e quartas: de 17:00h às 18:00h – de 13 até 16 anos | de 18:00h às 19:00h – crianças de 9 até 12 anos | de 19:00h às 20:00h – de 5 até 8 anos \n\nContato: (21) 99858-5921 – Alex Dardengo'
 
         },
         {
             id: 3,
             itemImageSrc: activity3,
             title: 'Pilates',
-            infos: 'Contato diretamente com a academia <br/>*Descontos para Plano Família (somente nos planos mensais) – 2 membros: 5% | 3 ou mais membros: 8% | somente no DCC',
-            idade: '',
-            contato: ''
+            infos: 'CONTATO\n\n*Fale Contato diretamente com a academia *Descontos para Plano Família (somente nos planos mensais) – 2 membros: 5% | 3 ou mais membros: 8% | somente no DCC \n\nContatos: (21) 99530-0345 - (21) 2541-3250'
 
         },
         {
             id: 4,
             itemImageSrc: activity4,
             title: 'Natação',
-            infos: '',
-            idade: '',
-            contato: ''
+            infos: 'CONTATO \n\nContato diretamente com a academia \n*Desconto para Plano Família (somente nos planos mensais) \n\nCOntatos: (21) 99530-0345 - (21) 2541-3250'
 
         },
         {
             id: 5,
             itemImageSrc: activity5,
             title: 'Judô',
-            infos: '',
-            idade: '',
-            contato: ''
-
+            infos: 'CONTATO \n\nTerças e quintas: 18:00h (até 7 anos) \n18:35 ( até 12 anos) \n19:20 ( a partir de 13 anos) \n\nContato: (21) 99226-9254 – Fred Damiano'
         },
     ];
 
