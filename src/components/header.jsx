@@ -22,9 +22,10 @@ const Header = () => {
     const navigate = useNavigate();
 
     const publicLinks = [
-        { id: 1, name: 'Sobre Nós', path: '/sobrenos' },
+        { id: 1, name: 'Home', path: '/' },
+        { id: 2, name: 'Sobre Nós', path: '/sobrenos' },
         { id: 3, name: 'Atividades', path: '/atividades' },
-        { id: 5, name: 'Contatos', path: '/contatos' }
+        { id: 4, name: 'Contatos', path: '/contatos' }
     ];
 
     const socialMedia = [

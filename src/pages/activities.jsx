@@ -1,51 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import useWindowSize from '../hooks/useWindowSize';
 import { BreadCrumb } from 'primereact/breadcrumb';
-import espaco1 from '../assets/imgs/general/belasartes.jpg';
-import espaco2 from '../assets/imgs/general/belavsita.jpg';
-import espaco3 from '../assets/imgs/general/terraco.jpg';
-import espaco4 from '../assets/imgs/general/tamandare.jpg';
-import espaco5 from '../assets/imgs/general/casablancaebelavista.jpg';
-import { useNavigate } from 'react-router-dom';
+import activity1 from '../assets/imgs/general/basquete.jpg';
+import activity2 from '../assets/imgs/general/futebol.jpg';
+import activity3 from '../assets/imgs/general/pilates.jpg';
+import activity4 from '../assets/imgs/general/natacao.jpg';
+import activity5 from '../assets/imgs/general/judo.jpg';
+import ImgDialog from '../components/imgDialog';
 
 const Activities = () => {
     const { width } = useWindowSize();
-    const navigate = useNavigate();
+    const [openImg, setOpenImg] = useState(false);
+    const [selectedImg, setSelectedImg] = useState(null);
 
     const breadcrumbItems = [
         { label: 'Home', url: '/' },
         { label: 'Atividades', url: '/atividades' }
     ];
 
-    const imgsSpaces = [
+    const imgsActivities = [
         {
             id: 1,
-            itemImageSrc: espaco1,
-            title: 'Belas Artes'
+            itemImageSrc: activity1,
+            title: 'Basquete',
+            infos: '',
+            idade: '',
+            contato: ''
+
         },
         {
             id: 2,
-            itemImageSrc: espaco2,
-            title: 'Bela Vista'
+            itemImageSrc: activity2,
+            title: 'Futebol',
+            infos: '',
+            idade: '',
+            contato: ''
+
         },
         {
             id: 3,
-            itemImageSrc: espaco3,
-            title: 'Espaço Duque de Caxias'
+            itemImageSrc: activity3,
+            title: 'Pilates',
+            infos: 'Contato diretamente com a academia <br/>*Descontos para Plano Família (somente nos planos mensais) – 2 membros: 5% | 3 ou mais membros: 8% | somente no DCC',
+            idade: '',
+            contato: ''
+
         },
         {
             id: 4,
-            itemImageSrc: espaco4,
-            title: 'Arcos e Tamandaré'
+            itemImageSrc: activity4,
+            title: 'Natação',
+            infos: '',
+            idade: '',
+            contato: ''
+
         },
         {
             id: 5,
-            itemImageSrc: espaco5,
-            title: 'Casablanca e Bela Vista'
-        }
+            itemImageSrc: activity5,
+            title: 'Judô',
+            infos: '',
+            idade: '',
+            contato: ''
+
+        },
     ];
+
+    const handleImageClick = (img) => {
+        setSelectedImg(img);
+        setOpenImg(true);
+    };
 
     return (
         <>
@@ -64,17 +90,16 @@ const Activities = () => {
                         </>
                     )}
                 </div>
+
                 <div className='text-start max-w-full'>
                     <p style={{ fontFamily: 'var(--font-family-suport)' }}>
                         A prática esportiva promove inúmeros benefícios, como redução dos riscos de doenças, melhora na formação do corpo, diminuição do estresse e do nível de ansiedade, melhora da coordenação motora, proteção dos ossos e das articulações, e manutenção de uma vida saudável.<br /><br />
-
                         É fundamental a prática de atividade física da infância até o envelhecimento. Não existe exercício ideal, é preciso respeitar a individualidade, o desejo, prazer e a aptidão física.<br /><br />
-
                         AS INFORMAÇÕES SOBRE AS ATIVIDADES DO CÍRCULO MILITAR NÃO SÃO DE RESPONSABILIDADE DA SECRETARIA E DEVEM TRATADAS DIRETAMENTE COM CADA PROFESSOR(A).<br /><br />
-
                         ESCOLHA A MODALIDADE ESPORTIVA ABAIXO PARA VISUALIZAR O CONTATO DO PROFESSOR(A) E OS HORÁRIOS DE AULAS DISPONÍVEIS.
                     </p>
                 </div>
+
                 <div
                     className="grid gap-4 justify-content-center mt-6"
                     style={{
@@ -83,7 +108,7 @@ const Activities = () => {
                         justifyItems: 'center'
                     }}
                 >
-                    {imgsSpaces.map((item) => (
+                    {imgsActivities.map((item) => (
                         <div
                             key={item.id}
                             className="relative cursor-pointer overflow-hidden border-round-xl"
@@ -91,7 +116,7 @@ const Activities = () => {
                                 width: width >= 1024 ? '350px' : '300px',
                                 height: width >= 1024 ? '400px' : '350px'
                             }}
-                            onClick={() => navigate('/novidades')}
+                            onClick={() => handleImageClick(item)}
                         >
                             <img
                                 src={item.itemImageSrc}
@@ -112,9 +137,16 @@ const Activities = () => {
                     ))}
                 </div>
             </div>
+
+            <ImgDialog
+                visible={openImg}
+                onclose={() => setOpenImg(false)}
+                imgSelected={selectedImg}
+            />
+
             <Footer />
         </>
     )
 }
 
-export default Activities
+export default Activities;
