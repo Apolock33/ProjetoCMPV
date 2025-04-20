@@ -4,6 +4,7 @@ import Home from './pages/home'
 import LogIn from './pages/login'
 import About from './pages/about'
 import Activities from './pages/activities'
+import Error from './pages/error'
 
 const Routes = () => {
     const publicRoutes = [
@@ -11,13 +12,13 @@ const Routes = () => {
             id: 1,
             path: '/',
             element: <Home />,
-            errorElement: <h1>Error</h1>
+            errorElement: <Error />
         },
         {
             id: 2,
             path: '/sobrenos',
             element: <About />,
-            errorElement: <h1>Error</h1>
+            errorElement: <Error />
         },
         {
             id: 3,
@@ -28,7 +29,7 @@ const Routes = () => {
             id: 4,
             path: '/contatos',
             element: <About />,
-            errorElement: <h1>Error</h1>
+            errorElement: <Error />
         },
         {
             id: 5,
