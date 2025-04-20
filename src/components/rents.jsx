@@ -90,7 +90,8 @@ const Rents = () => {
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Aluguel de Espaços</h1>
             </div>
             <div className='px-6'>
-                <p className='text-lg font-medium'>Clique nos cards para mais informações</p>
+                <p className='text-lg font-medium'
+                    style={{  fontFamily: 'var(--font-family-suport)' }}>Clique nos cards para mais informações</p>
             </div>
             <div className="px-3 md:px-6">
                 <Carousel

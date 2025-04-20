@@ -26,7 +26,7 @@ const Events = () => {
                 <Link
                     to="/eventos"
                     className='flex align-items-center no-underline gap-2 font-medium'
-                    style={{ color: 'var(--primary-color)' }}
+                    style={{ color: 'var(--primary-color)', fontFamily:'var(--font-family-suport)' }}
                 >
                     Veja Mais
                     <FaArrowRight />

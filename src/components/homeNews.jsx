@@ -55,7 +55,7 @@ const HomeNews = () => {
         <div className="p-4">
             <div className="flex gap-3 align-items-center justify-content-between mb-4">
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Noticias</h1>
-                <Link to="/novidades" className="flex align-items-center no-underline gap-2 font-medium" style={{ color: 'var(--primary-color)' }}>
+                <Link to="/novidades" className="flex align-items-center no-underline gap-2 font-medium" style={{ color: 'var(--primary-color)', fontFamily:'var(--font-family-suport)' }}>
                     Veja Mais
                     <FaArrowRight />
                 </Link>
@@ -104,7 +104,7 @@ const HomeNews = () => {
                     </motion.div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }
 

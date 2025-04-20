@@ -5,6 +5,7 @@ import LogIn from './pages/login'
 import About from './pages/about'
 import Activities from './pages/activities'
 import Error from './pages/error'
+import Contacts from './pages/contact'
 
 const Routes = () => {
     const publicRoutes = [
@@ -28,7 +29,7 @@ const Routes = () => {
         {
             id: 4,
             path: '/contatos',
-            element: <About />,
+            element: <Contacts />,
             errorElement: <Error />
         },
         {

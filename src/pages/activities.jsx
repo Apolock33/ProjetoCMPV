@@ -65,10 +65,10 @@ const Activities = () => {
                     )}
                 </div>
                 <div className='text-start max-w-full'>
-                    <p className='px-6'>
-                        A prática esportiva promove inúmeros benefícios, como redução dos riscos de doenças, melhora na formação do corpo, diminuição do estresse e do nível de ansiedade, melhora da coordenação motora, proteção dos ossos e das articulações, e manutenção de uma vida saudável.<br />
+                    <p style={{ fontFamily: 'var(--font-family-suport)' }}>
+                        A prática esportiva promove inúmeros benefícios, como redução dos riscos de doenças, melhora na formação do corpo, diminuição do estresse e do nível de ansiedade, melhora da coordenação motora, proteção dos ossos e das articulações, e manutenção de uma vida saudável.<br /><br />
 
-                        É fundamental a prática de atividade física da infância até o envelhecimento. Não existe exercício ideal, é preciso respeitar a individualidade, o desejo, prazer e a aptidão física.<br />
+                        É fundamental a prática de atividade física da infância até o envelhecimento. Não existe exercício ideal, é preciso respeitar a individualidade, o desejo, prazer e a aptidão física.<br /><br />
 
                         AS INFORMAÇÕES SOBRE AS ATIVIDADES DO CÍRCULO MILITAR NÃO SÃO DE RESPONSABILIDADE DA SECRETARIA E DEVEM TRATADAS DIRETAMENTE COM CADA PROFESSOR(A).<br /><br />
 
@@ -79,7 +79,7 @@ const Activities = () => {
                     className="grid gap-4 justify-content-center mt-6"
                     style={{
                         display: 'grid',
-                        gridTemplateColumns: width >= 1024 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)',
+                        gridTemplateColumns: width > 1024 ? 'repeat(3, 1fr)' : width > 768 ? 'repeat(2, 1fr)' : 'repeat(1, 1fr)',
                         justifyItems: 'center'
                     }}
                 >
