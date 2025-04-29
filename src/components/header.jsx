@@ -13,7 +13,6 @@ import { FaSearch } from 'react-icons/fa';
 
 const Header = () => {
     const [visible, setVisible] = useState(false);
-    const [imgLowSize, setImgLowSize] = useState(false);
     const {
         isMobile,
         isScrollingDown,

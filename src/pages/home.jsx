@@ -1,21 +1,15 @@
-import React, { useContext } from 'react'
-import Header from '../components/header'
-import HomeCarousel from '../components/homeCarousel'
-import '../assets/css/home.css'
-import Events from '../components/events'
+import React from 'react'
 import { motion } from 'motion/react'
-import { GlobalContext } from '../contexts/globalContext'
-import Rents from '../components/rents'
-import HomeNews from '../components/homeNews'
-import Footer from '../components/footer'
-import WppButton from '../components/wppButton'
+
+const HomeCarousel = React.lazy(() => import('../components/homeCarousel'))
+const HomeNews = React.lazy(() => import('../components/homeNews'))
+const Events = React.lazy(() => import('../components/events'))
+const Rents = React.lazy(() => import('../components/rents'))
 
 const Home = () => {
-  const { isMobile } = useContext(GlobalContext);
 
   return (
     <>
-      <Header />
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -36,8 +30,6 @@ const Home = () => {
       <section id='rents'>
         <Rents />
       </section>
-      <WppButton />
-      <Footer />
     </>
   )
 }

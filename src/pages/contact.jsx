@@ -15,7 +15,6 @@ const Contact = () => {
 
   return (
     <>
-      <Header />
       <div className='p-6'>
         <div className={`${width < 769 ? 'flex flex-column' : 'flex align-items-center justify-content-between'} px-1`}>
           {width < 769 ? (

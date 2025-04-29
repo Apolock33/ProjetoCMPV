@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { Suspense } from 'react'
 import { GlobalProvider } from './contexts/globalContext'
 import Routes from './routes'
 import { PrimeReactProvider } from 'primereact/api'
 
-const App = () => {
+const Loading = React.lazy(() => import('./components/loading'));
 
+const App = () => {
 
   return (
     <PrimeReactProvider>
       <GlobalProvider>
-        <Routes />
+        <Suspense fallback={<Loading />}>
+          <Routes />
+        </Suspense>
       </GlobalProvider>
     </PrimeReactProvider>
   )
