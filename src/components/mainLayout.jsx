@@ -1,7 +1,8 @@
 import React, { lazy } from 'react'
 import { Outlet } from 'react-router-dom'
+import Header from './header'
+import '../assets/css/index.css'
 
-const Header = lazy(() => import('./header'))
 const WppButton = lazy(() => import('./wppButton'))
 const Footer = lazy(() => import('./footer'))
 
