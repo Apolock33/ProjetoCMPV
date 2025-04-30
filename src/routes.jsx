@@ -1,4 +1,3 @@
-import { path } from 'motion/react-client'
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -9,6 +8,7 @@ const About = React.lazy(() => import('./pages/about'))
 const Activities = React.lazy(() => import('./pages/activities'))
 const Contacts = React.lazy(() => import('./pages/contact'))
 const LogIn = React.lazy(() => import('./pages/login'))
+const Error = React.lazy(() => import('./pages/error'))
 
 const Routes = () => {
     const publicRoutes = [
@@ -16,6 +16,7 @@ const Routes = () => {
             id: 1,
             path: '/',
             element: <MainLayout />,
+            errorElement: <Error />,
             children: [
                 {
                     id: 1,
@@ -25,18 +26,18 @@ const Routes = () => {
                 },
                 {
                     id: 2,
-                    path: '/sobrenos',
+                    path: 'sobrenos',
                     element: <About />,
                     errorElement: <Error />
                 },
                 {
                     id: 3,
-                    path: '/atividades',
+                    path: 'atividades',
                     element: <Activities />
                 },
                 {
                     id: 4,
-                    path: '/contatos',
+                    path: 'contatos',
                     element: <Contacts />,
                     errorElement: <Error />
                 },

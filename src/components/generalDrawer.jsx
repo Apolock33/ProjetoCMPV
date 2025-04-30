@@ -52,7 +52,6 @@ const GeneralDrawer = ({ isVisible, onClose, drawerSide, children }) => {
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
-                    onClick={onClose}
                     style={{
                         position: 'fixed',
                         top: 0,
@@ -72,7 +71,6 @@ const GeneralDrawer = ({ isVisible, onClose, drawerSide, children }) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        onClick={(e) => e.stopPropagation()}
                         style={{
                             width: '100%',
                             height: '100%',
