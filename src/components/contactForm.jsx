@@ -26,6 +26,10 @@ const ContactForm = () => {
     toast.current.show({ severity: 'success', summary: 'Sucesso!', detail: 'Solicitação Enviada' });
   };
 
+  const showError = (e) => {
+    toast.current.show({ severity: 'error', summary: 'Erro!', detail: `Houve um problema ao enviar a Solicitação. \n${e}` });
+  };
+
   const sendEmail = (e) => {
     e.preventDefault(); // Previne o comportamento padrão de envio
 
@@ -38,14 +42,15 @@ const ContactForm = () => {
       )
       .then(
         () => {
-          // form.current.reset();
+          form.current.reset();
           show();
-          // setFullName('');
-          // setEmail('');
-          // setSubject('');
-          // setContent('');
+          setFullName('');
+          setEmail('');
+          setSubject('');
+          setContent('');
         },
         (error) => {
+          showError(error);
           console.error('Erro ao enviar:', error);
         }
       );
@@ -116,7 +121,7 @@ const ContactForm = () => {
           />
         </div>
       </form>
-      <Toast ref={toast} style={{background: 'var(--success-color) !important'}}/>
+      <Toast ref={toast} />
 
       <div className={`${width < 769 ? 'col-12' : 'col-6 pl-5'}`}>
         <h2 style={{ color: 'var(--primary-color)' }}>Informações Extras de Contato:</h2>
