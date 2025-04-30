@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa6'
 
 const Error = () => {
     return (
-        <main className=''
+        <section className=''
             style={{ backgroundColor: 'var(--primary-color)' }}>
             <Button
                 rounded
@@ -14,13 +14,13 @@ const Error = () => {
                 onClick={() => window.location.href = '/'}
                 className='absolute top-0 left-0 z-5 text-white px-4 m-3 text-3xl flex gap-3'
             />
-            <section className='text-center flex flex-column justify-content-center align-items-center w-full h-screen'>
+            <div className='text-center flex flex-column justify-content-center align-items-center w-full h-screen'>
                 <h1 style={{ color: 'var(--background-color)', fontSize: '10rem' }}>404</h1>
                 <h1 style={{ color: 'var(--background-color)', fontSize: '2rem' }}>Hmmmm...Não Encontramos o que Você está procurando</h1>
                 <h1 style={{ color: 'var(--background-color)', fontSize: '2rem' }}>Por favor, tente novamente em um outro momento</h1>
 
-            </section>
-        </main>
+            </div>
+        </section>
     )
 }
 

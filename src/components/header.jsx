@@ -10,6 +10,7 @@ import { InputText } from "primereact/inputtext";
 import { TiThMenu } from "react-icons/ti";
 import { AiFillInstagram } from 'react-icons/ai';
 import { FaSearch } from 'react-icons/fa';
+import '../assets/css/header.css';
 
 const Header = () => {
     const [visible, setVisible] = useState(false);

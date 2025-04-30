@@ -96,10 +96,3 @@ h6 {
     display: flex;
     justify-content: center;
 }
-
-.search-navbar {
-    background: var(--background-color);
-    background: linear-gradient(90deg,
-            rgba(250, 250, 250, 1) 30%,
-            rgb(9, 41, 75, 0.8) 70%);
-}

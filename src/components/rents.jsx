@@ -1,45 +1,57 @@
-import React, { useState } from 'react'
-import { FaArrowRight } from 'react-icons/fa6'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Carousel } from 'primereact/carousel';
+import useWindowSize from '../hooks/useWindowSize';
 import espaco1 from '../assets/imgs/general/belasartes.jpg';
 import espaco2 from '../assets/imgs/general/belavsita.jpg';
 import espaco3 from '../assets/imgs/general/terraco.jpg';
 import espaco4 from '../assets/imgs/general/tamandare.jpg';
 import espaco5 from '../assets/imgs/general/casablancaebelavista.jpg';
-import { Carousel } from 'primereact/carousel'
-import useWindowSize from '../hooks/useWindowSize';
+// Importe imagens extras para a galeria
+import espaco1img2 from '../assets/imgs/general/terraco.jpg';
+import espaco1img3 from '../assets/imgs/general/belavsita.jpg';
+import CarouselDialog from '../components/carouselDialog'; // ajuste o caminho conforme sua estrutura
 
 const Rents = () => {
     const { width } = useWindowSize();
-    const [rentInfos, setRentInfos] = useState({});
+    const [visibleDialog, setVisibleDialog] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const imgsSpaces = [
         {
             id: 1,
             itemImageSrc: espaco1,
-            title: 'Belas Artes'
+            title: 'Belas Artes',
+            gallery: [
+                espaco1,
+                espaco1img2,
+                espaco1img3                
+            ]
         },
         {
             id: 2,
             itemImageSrc: espaco2,
-            title: 'Bela Vista'
+            title: 'Bela Vista',
+            gallery: [espaco2]
         },
         {
             id: 3,
             itemImageSrc: espaco3,
-            title: 'Espaço Duque de Caxias'
+            title: 'Espaço Duque de Caxias',
+            gallery: [espaco3]
         },
         {
             id: 4,
             itemImageSrc: espaco4,
-            title: 'Arcos e Tamandaré'
+            title: 'Arcos e Tamandaré',
+            gallery: [espaco4]
         },
         {
             id: 5,
             itemImageSrc: espaco5,
-            title: 'Casablanca e Bela Vista'
+            title: 'Casablanca e Bela Vista',
+            gallery: [espaco5]
         }
-    ]
+    ];
 
     const responsiveOptions = [
         {
@@ -63,7 +75,10 @@ const Rents = () => {
         return (
             <div
                 className="cursor-pointer relative overflow-hidden border-round-xl mx-2"
-                onClick={() => setRentInfos(item)}
+                onClick={() => {
+                    setSelectedImage(item);
+                    setVisibleDialog(true);
+                }}
             >
                 <img
                     src={item.itemImageSrc}
@@ -107,8 +122,15 @@ const Rents = () => {
                     draggable
                 />
             </div>
-        </div >
-    )
-}
 
-export default Rents
+            <CarouselDialog
+                visible={visibleDialog}
+                onClose={() => setVisibleDialog(false)}
+                initialImage={selectedImage}
+                images={selectedImage?.gallery}
+            />
+        </div>
+    );
+};
+
+export default Rents;

@@ -4,10 +4,10 @@ import WppButton from './wppButton'
 
 const blankLayout = () => {
     return (
-        <>
+        <main>
             <Outlet />
             <WppButton />
-        </>
+        </main>
     )
 }
 

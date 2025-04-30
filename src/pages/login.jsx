@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   return (
-    <main className='flex flex-column justify-content-center align-items-center w-full h-screen'>
+    <section className='flex flex-column justify-content-center align-items-center w-full h-screen'>
       <div className='bg-white m-2 p-3 shadow-3 border-round-xl'>
         <div className='flex flex-column justify-content-center align-items-center'>
           <img src={Logo} alt="logo" width={width < 768 ? 200 : width < 1024 ? 300 : 450} />
@@ -53,7 +53,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   )
 }
 

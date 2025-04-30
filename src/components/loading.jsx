@@ -1,11 +1,11 @@
 import React from 'react'
 import '../assets/css/index.css'
-import { ProgressSpinner } from 'primereact/progressspinner'
+import { ProgressBar } from 'primereact/progressbar'
 
 const Loading = () => {
     return (
         <main className='flex justify-content-center align-items-center w-screen h-screen overflow-hidden'>
-            <ProgressSpinner  />
+            <ProgressBar mode="indeterminate" style={{ width: '300px', height: '6px' }} color='var(--primary-color)'></ProgressBar>
         </main>
     )
 }
