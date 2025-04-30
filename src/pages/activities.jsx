@@ -131,8 +131,6 @@ const Activities = () => {
                 onclose={() => setOpenImg(false)}
                 imgSelected={selectedImg}
             />
-
-            <Footer />
         </section>
     )
 }

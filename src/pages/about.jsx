@@ -359,7 +359,6 @@ const About = () => {
                     </TabPanel>
                 </TabView>
             </div>
-            <Footer />
         </section>
     )
 }
