@@ -4,10 +4,10 @@ import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
 import { FaX } from 'react-icons/fa6';
 import useWindowSize from '../hooks/useWindowSize';
+import { Galleria } from 'primereact/galleria';
 
 const CarouselDialog = ({ visible, onClose, images }) => {
     const { width } = useWindowSize();
-    const isMobile = width < 768;
 
     const backdrop = {
         visible: { opacity: 1 },
@@ -50,9 +50,9 @@ const CarouselDialog = ({ visible, onClose, images }) => {
                     src={item}
                     alt="Imagem da galeria"
                     style={{
-                        width: isMobile ? '100%' : '80%',
+                        width: width < 769 ? '100%' : '80%',
                         height: 'auto',
-                        maxHeight: isMobile ? '300px' : '500px',
+                        maxHeight: width < 769 ? '300px' : '500px',
                         objectFit: 'contain',
                         borderRadius: '12px',
                     }}
@@ -88,7 +88,7 @@ const CarouselDialog = ({ visible, onClose, images }) => {
                         icon={() => <FaX size={30} />}
                         rounded
                         text
-                        className={`absolute top-0 right-0 z-5 text-white p-2 ${isMobile ? 'm-3' : 'm-5'}`}
+                        className={`absolute top-0 right-0 z-5 text-white p-2 ${width < 769 ? 'm-3' : 'm-5'}`}
                         onClick={onClose}
                     />
 
@@ -106,17 +106,30 @@ const CarouselDialog = ({ visible, onClose, images }) => {
                             backgroundColor: 'transparent',
                         }}
                     >
-                        <Carousel
-                            value={images}
-                            numVisible={1}
-                            numScroll={1}
-                            circular
-                            autoplayInterval={4000}
-                            itemTemplate={itemTemplate}
-                            showNavigators
-                            showIndicators
-                            style={{ width: '100%' }}
-                        />
+                        {width < 769 ? (
+                            <Galleria
+                                value={images}
+                                showThumbnails={false}
+                                showIndicators
+                                draggable
+                                circular
+                                item={itemTemplate}
+                            />
+                        ) : (
+                            <Carousel
+                                value={images}
+                                numVisible={1}
+                                numScroll={1}
+                                circular
+                                draggable
+                                autoplayInterval={4000}
+                                itemTemplate={itemTemplate}
+                                showNavigators
+                                showIndicators
+                                style={{ width: '100%' }}
+
+                            />
+                        )}
                     </motion.div>
                 </motion.div>
             )}
