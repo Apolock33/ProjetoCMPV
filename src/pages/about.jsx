@@ -258,7 +258,7 @@ const About = () => {
                                     <h3 className='mb-3' style={{ color: 'var(--primary-color)' }}>Localização</h3>
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.869173844103!2d-43.16804672504368!3d-22.955044739596886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99801a67b5eb6b%3A0xeddf40c5d68ff46f!2sPra%C3%A7a%20General%20Tib%C3%BArcio!5e0!3m2!1spt-BR!2sbr!4v1745093990652!5m2!1spt-BR!2sbr"
-                                        width={(width < 769) ? "350" : "600"}
+                                        width={(width < 426) ? "350" : "600"}
                                         height="150"
                                         frameborder="0"
                                         style={{ border: 0 }}
@@ -273,9 +273,9 @@ const About = () => {
                         <div>
                             <h3>Ex-Presidentes do Círculo</h3>
                             <div
-                                className='grid align-items-center gap-2'
+                                className='grid align-items-center'
                                 style={{ fontFamily: 'var(--font-family-suport)' }}>
-                                <ul className='col-2 list-none'>
+                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
                                     <li>1986 – Cel Ayres</li>
                                     <li>1987 – Cel Henrique</li>
                                     <li>1988 – Cel Praciano</li>
@@ -284,7 +284,7 @@ const About = () => {
                                     <li>1991 – TC Higino</li>
                                     <li>1992 – TC Boson</li>
                                 </ul>
-                                <ul className='col-2 list-none'>
+                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
                                     <li>1994 – TC Macedo / TC Rachevsky</li>
                                     <li>1995 – Cel Peres</li>
                                     <li>1998 – Cel Macedo</li>
@@ -292,7 +292,7 @@ const About = () => {
                                     <li>2002 – Cel Melo</li>
                                     <li>2004 – Cel Pastori</li>
                                 </ul>
-                                <ul className='col-2 list-none'>
+                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
                                     <li>2007 – Cel Sampaio</li>
                                     <li>2008 – Cel Elias</li>
                                     <li>2009 – Cel Marco Antônio</li>
@@ -301,7 +301,7 @@ const About = () => {
                                     <li>2012 – Cel Frazão</li>
                                     <li>2013 – Cel Paulo Sérgio</li>
                                 </ul>
-                                <ul className='col-2 list-none'>
+                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
                                     <li>2014 – Cel Melo</li>
                                     <li>2015 – Cel Narcizo</li>
                                     <li>2016 – Cel Bessa</li>
@@ -310,7 +310,7 @@ const About = () => {
                                     <li>2019 – Cel Moussallem</li>
                                     <li>2020 – Cel Sassone</li>
                                 </ul>
-                                <ul className='col-2 list-none'>
+                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
                                     <li>2021 – Cel Corrêa Netto</li>
                                     <li>2022 – Cel José Euclides</li>
                                     <li>2023 – Cel Ivan Christie</li>
