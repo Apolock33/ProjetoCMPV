@@ -37,19 +37,19 @@ import ArcosETamandare6 from '../assets/imgs/general/saloes/arcosTamandare/arcos
 import ArcosETamandare7 from '../assets/imgs/general/saloes/arcosTamandare/arcosetamandare7.jpg';
 import ArcosETamandare8 from '../assets/imgs/general/saloes/arcosTamandare/arcosetamandare8.jpg';
 import ArcosETamandare9 from '../assets/imgs/general/saloes/arcosTamandare/arcosetamandare9.jpg';
-import CasablancaeBelaVista1 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista1.jpg';
-import CasablancaeBelaVista2 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista2.jpg';
-import CasablancaeBelaVista3 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista3.jpg';
-import CasablancaeBelaVista4 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista4.jpg';
-import CasablancaeBelaVista5 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista5.jpg';
-import CasablancaeBelaVista7 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista7.jpg';
-import CasablancaeBelaVista8 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista8.jpg';
-import CasablancaeBelaVista9 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista9.jpg';
-import CasablancaeBelaVista10 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista10.jpg';
-import CasablancaeBelaVista11 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista11.jpg';
-import CasablancaeBelaVista12 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista12.jpg';
-import CasablancaeBelaVista13 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista13.jpg';
-import CasablancaeBelaVista14 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaeBelaVista14.jpg';
+import CasablancaeBelaVista1 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista1.jpg';
+import CasablancaeBelaVista2 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista2.jpg';
+import CasablancaeBelaVista3 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista3.jpg';
+import CasablancaeBelaVista4 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista4.jpg';
+import CasablancaeBelaVista5 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista5.jpg';
+import CasablancaeBelaVista7 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista7.jpg';
+import CasablancaeBelaVista8 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista8.jpg';
+import CasablancaeBelaVista9 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista9.jpg';
+import CasablancaeBelaVista10 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista10.jpg';
+import CasablancaeBelaVista11 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista11.jpg';
+import CasablancaeBelaVista12 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista12.jpg';
+import CasablancaeBelaVista13 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista13.jpg';
+import CasablancaeBelaVista14 from '../assets/imgs/general/saloes/casablancaBelavista/casablancaebelavista14.jpg';
 
 export { 
     BelasArtes1,
