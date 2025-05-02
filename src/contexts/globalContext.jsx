@@ -44,7 +44,7 @@ export const GlobalProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0 });
       }, [location.pathname])
 
     return (
