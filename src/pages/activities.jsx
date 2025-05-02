@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import useWindowSize from '../hooks/useWindowSize';
 import { BreadCrumb } from 'primereact/breadcrumb';
-import activity1 from '../assets/imgs/general/basquete.jpg';
-import activity2 from '../assets/imgs/general/futebol.jpg';
-import activity3 from '../assets/imgs/general/pilates.jpg';
-import activity4 from '../assets/imgs/general/natacao.jpg';
-import activity5 from '../assets/imgs/general/judo.jpg';
-import ImgDialog from '../components/imgDialog';
+import activity1 from '../assets/imgs/general/atividades/basquete.jpg';
+import activity2 from '../assets/imgs/general/atividades/futebol.jpg';
+import activity3 from '../assets/imgs/general/atividades/pilates.jpg';
+import activity4 from '../assets/imgs/general/atividades/natacao.jpg';
+import activity5 from '../assets/imgs/general/atividades/judo.jpg';
+import ImgDialog from '../components/imgDialogActivities';
 
 const Activities = () => {
     const { width } = useWindowSize();

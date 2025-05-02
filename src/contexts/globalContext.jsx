@@ -9,6 +9,7 @@ export const GlobalProvider = ({ children }) => {
     const [isScrollingDown, setIsScrollingDown] = useState(false);
     const [lastScrollYValue, setLastScrollYValue] = useState(0);
     const [showSecondaryHeader, setShowSecondaryHeader] = useState(true);
+    const [zoomLevel, setZoomLevel] = useState(1);
     const { width } = useWindowSize();
     const { scrollY } = useScrollDown();
 
@@ -25,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
             setLastScrollYValue(scrollY);
         }, 1000);
 
-        if (scrollY === 0 ) {
+        if (scrollY === 0) {
             setShowSecondaryHeader(true);
         }
 
@@ -43,7 +44,7 @@ export const GlobalProvider = ({ children }) => {
     });
 
     return (
-        <GlobalContext.Provider value={{ isMobile, isScrollingDown, showSecondaryHeader }}>
+        <GlobalContext.Provider value={{ isMobile, isScrollingDown, showSecondaryHeader, zoomLevel, setZoomLevel }}>
             {children}
         </GlobalContext.Provider>
     )

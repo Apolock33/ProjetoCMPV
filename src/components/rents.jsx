@@ -6,10 +6,34 @@ import espaco2 from '../assets/imgs/general/belavsita.jpg';
 import espaco3 from '../assets/imgs/general/terraco.jpg';
 import espaco4 from '../assets/imgs/general/tamandare.jpg';
 import espaco5 from '../assets/imgs/general/casablancaebelavista.jpg';
-// Importe imagens extras para a galeria
-import espaco1img2 from '../assets/imgs/general/terraco.jpg';
-import espaco1img3 from '../assets/imgs/general/belavsita.jpg';
-import CarouselDialog from '../components/carouselDialog'; // ajuste o caminho conforme sua estrutura
+import CarouselDialog from '../components/carouselDialog';
+import {
+    BelasArtes1,
+    BelasArtes2,
+    BelasArtes3,
+    BelasArtes4,
+    BelasArtes5,
+    BelaVista1,
+    BelaVista2, 
+    BelaVista3, 
+    BelaVista4, 
+    BelaVista5,
+    Terraco1,
+    Terraco2,
+    Terraco3,
+    Terraco4,
+    Terraco5,
+    ArcosETamandare1,
+    ArcosETamandare2,
+    ArcosETamandare3,
+    ArcosETamandare4,
+    ArcosETamandare5,
+    CasablancaeBelaVista1,
+    CasablancaeBelaVista2,
+    CasablancaeBelaVista3,
+    CasablancaeBelaVista4,
+    CasablancaeBelaVista5,
+} from '../imports/hallGallery';
 
 const Rents = () => {
     const { width } = useWindowSize();
@@ -21,35 +45,31 @@ const Rents = () => {
             id: 1,
             itemImageSrc: espaco1,
             title: 'Belas Artes',
-            gallery: [
-                espaco1,
-                espaco1img2,
-                espaco1img3                
-            ]
+            gallery: [BelasArtes1, BelasArtes2, BelasArtes3, BelasArtes4, BelasArtes5]
         },
         {
             id: 2,
             itemImageSrc: espaco2,
             title: 'Bela Vista',
-            gallery: [espaco2]
+            gallery: [BelaVista1, BelaVista2, BelaVista3, BelaVista4, BelaVista5]
         },
         {
             id: 3,
             itemImageSrc: espaco3,
             title: 'Espaço Duque de Caxias',
-            gallery: [espaco3]
+            gallery: [Terraco1, Terraco2, Terraco3, Terraco4, Terraco5]
         },
         {
             id: 4,
             itemImageSrc: espaco4,
             title: 'Arcos e Tamandaré',
-            gallery: [espaco4]
+            gallery: [ArcosETamandare1, ArcosETamandare2, ArcosETamandare3, ArcosETamandare4, ArcosETamandare5]
         },
         {
             id: 5,
             itemImageSrc: espaco5,
             title: 'Casablanca e Bela Vista',
-            gallery: [espaco5]
+            gallery: [CasablancaeBelaVista1, CasablancaeBelaVista2, CasablancaeBelaVista3, CasablancaeBelaVista4, CasablancaeBelaVista5]
         }
     ];
 
@@ -104,9 +124,16 @@ const Rents = () => {
             <div className="mb-4 px-6">
                 <h1 className="text-3xl font-bold" style={{ color: 'var(--primary-color)' }}>Aluguel de Espaços</h1>
             </div>
-            <div className='px-6'>
-                <p className='text-lg font-medium'
-                    style={{ fontFamily: 'var(--font-family-suport)' }}>Clique nos cards para mais informações</p>
+            <div className='px-6 font-medium' style={{ fontFamily: 'var(--font-family-suport)' }}>
+                <p>POR QUE FAZER SEU EVENTO NO CÍRCULO MILITAR?</p>
+
+                <p>Segurança, qualidade, excelente atendimento, amplos salões e parceiros ideais são os atributos que fazem do Círculo Militar o lugar ideal para a realização do seu evento.</p>
+
+                <p>Com fácil acesso e uma localização privilegiada na Zona Sul do Rio de Janeiro, mais precisamente na Praia Vermelha, com vista para o Morro da Urca e para o Pão de Açúcar, o Círculo Militar oferece comodidade e praticidade aos seus convidados, além de contar com uma ótima infraestrutura, diversão, cultura e lazer.</p>
+
+                <p>Entre em contato através do e-mail: eventos@cmpv.com.br ou se preferir, ligue para (21) 2295-3397 Ramal 22 ou Whatsapp (21) 99292-8614</p>
+                <p>Horário de Atendimento: Segunda à Sexta: 9h às 18 h</p>
+                <p className='text-lg'>Clique nos cards para mais informações</p>
             </div>
             <div className="px-3 md:px-6">
                 <Carousel
@@ -129,7 +156,7 @@ const Rents = () => {
                 initialImage={selectedImage}
                 images={selectedImage?.gallery}
             />
-        </div>
+        </div >
     );
 };
 

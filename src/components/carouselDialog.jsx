@@ -111,7 +111,7 @@ const CarouselDialog = ({ visible, onClose, images }) => {
                                 value={images}
                                 showThumbnails={false}
                                 showIndicators
-                                draggable
+                                showItemNavigators
                                 circular
                                 item={itemTemplate}
                             />
@@ -121,7 +121,7 @@ const CarouselDialog = ({ visible, onClose, images }) => {
                                 numVisible={1}
                                 numScroll={1}
                                 circular
-                                draggable
+                                draggable   
                                 autoplayInterval={4000}
                                 itemTemplate={itemTemplate}
                                 showNavigators

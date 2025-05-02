@@ -1,40 +1,44 @@
-import React from 'react'
-import Header from '../components/header'
+import React, { useState } from 'react'
 import { BreadCrumb } from 'primereact/breadcrumb';
 import { TabView, TabPanel } from 'primereact/tabview';
 import { FaBuilding, FaPhotoFilm, FaUser } from 'react-icons/fa6';
 import useWindowSize from '../hooks/useWindowSize';
 import { Carousel } from 'primereact/carousel';
-import imgFacility1 from '../assets/imgs/general/facility1.jpg';
-import imgFacility2 from '../assets/imgs/general/facility2.jpg';
-import imgFacility3 from '../assets/imgs/general/facility3.jpg';
-import imgFacility4 from '../assets/imgs/general/facility4.jpg';
-import imgFacility5 from '../assets/imgs/general/facility5.jpg';
-import imgFacility6 from '../assets/imgs/general/facility6.jpg';
-import imgFacility7 from '../assets/imgs/general/facility7.jpg';
-import imgFacility8 from '../assets/imgs/general/facility8.jpg';
-import imgFacility9 from '../assets/imgs/general/facility9.jpg';
-import imgFacility10 from '../assets/imgs/general/facility10.jpg';
-import imgFacility11 from '../assets/imgs/general/facility11.jpg';
-import imgFacility12 from '../assets/imgs/general/facility12.jpg';
-import imgFacility13 from '../assets/imgs/general/facility13.jpg';
-import imgFacility14 from '../assets/imgs/general/facility14.jpg';
-import imgFacility15 from '../assets/imgs/general/facility15.jpg';
-import imgFacility16 from '../assets/imgs/general/facility16.jpg';
-import imgFacility17 from '../assets/imgs/general/facility17.jpg';
-import imgFacility18 from '../assets/imgs/general/facility18.jpg';
-import imgFacility19 from '../assets/imgs/general/facility19.jpg';
-import imgFacility20 from '../assets/imgs/general/facility20.jpg';
-import imgFacility21 from '../assets/imgs/general/facility21.jpg';
-import imgFacility22 from '../assets/imgs/general/facility22.jpg';
-import imgFacility23 from '../assets/imgs/general/facility23.jpg';
-import imgFacility24 from '../assets/imgs/general/facility24.jpg';
-import imgFacility25 from '../assets/imgs/general/facility25.jpg';
-import imgFacility26 from '../assets/imgs/general/facility26.jpg';
-import Footer from '../components/footer';
+import ImgDialog from '../components/imgDialog';
+import { 
+    Facility1,
+    Facility2,
+    Facility3,
+    Facility4,
+    Facility5,
+    Facility6,
+    Facility7,
+    Facility8,
+    Facility9,
+    Facility10,
+    Facility11,
+    Facility12,
+    Facility13,
+    Facility14,
+    Facility15,
+    Facility16,
+    Facility17,
+    Facility18,
+    Facility19,
+    Facility20,
+    Facility21,
+    Facility22,
+    Facility23,
+    Facility24,
+    Facility25,
+    Facility26,
+    Facility27
+ } from '../imports/facilitiesGallery';
 
 const About = () => {
     const { width } = useWindowSize();
+    const [visibleDialog, setVisibleDialog] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const breadcrumbItems = [
         { label: 'Home', url: '/' },
@@ -44,133 +48,159 @@ const About = () => {
     const imgsFacilities = [
         {
             id: 1,
-            src: imgFacility1,
-            alt: 'Imagem 1'
+            src: Facility1,
+            alt: 'Imagem 1',
+            gallery: [Facility1, Facility2, Facility3]
         },
         {
             id: 2,
-            src: imgFacility2,
-            alt: 'Imagem 2'
+            src: Facility2,
+            alt: 'Imagem 2',
+            gallery: []
         },
         {
             id: 3,
-            src: imgFacility3,
-            alt: 'Imagem 3'
+            src: Facility3,
+            alt: 'Imagem 3',
+            gallery: []
         },
         {
             id: 4,
-            src: imgFacility4,
-            alt: 'Imagem 4'
+            src: Facility4,
+            alt: 'Imagem 4',
+            gallery: []
         },
         {
             id: 5,
-            src: imgFacility5,
-            alt: 'Imagem 5'
+            src: Facility5,
+            alt: 'Imagem 5',
+            gallery: []
         },
         {
             id: 6,
-            src: imgFacility6,
-            alt: 'Imagem 6'
+            src: Facility6,
+            alt: 'Imagem 6',
+            gallery: []
         },
         {
             id: 7,
-            src: imgFacility7,
-            alt: 'Imagem 7'
+            src: Facility7,
+            alt: 'Imagem 7',
+            gallery: []
         },
         {
             id: 8,
-            src: imgFacility8,
-            alt: 'Imagem 8'
+            src: Facility8,
+            alt: 'Imagem 8',
+            gallery: []
         },
         {
             id: 9,
-            src: imgFacility9,
-            alt: 'Imagem 9'
+            src: Facility9,
+            alt: 'Imagem 9',
+            gallery: []
         },
         {
             id: 10,
-            src: imgFacility10,
-            alt: 'Imagem 10'
+            src: Facility10,
+            alt: 'Imagem 10',
+            gallery: []
         },
         {
             id: 11,
-            src: imgFacility11,
-            alt: 'Imagem 11'
+            src: Facility11,
+            alt: 'Imagem 11',
+            gallery: []
         },
         {
             id: 12,
-            src: imgFacility12,
-            alt: 'Imagem 12'
+            src: Facility12,
+            alt: 'Imagem 12',
+            gallery: []
         },
         {
             id: 13,
-            src: imgFacility13,
-            alt: 'Imagem 13'
+            src: Facility13,
+            alt: 'Imagem 13',
+            gallery: []
         },
         {
             id: 14,
-            src: imgFacility14,
-            alt: 'Imagem 14'
+            src: Facility14,
+            alt: 'Imagem 14',
+            gallery: []
         },
         {
             id: 15,
-            src: imgFacility15,
-            alt: 'Imagem 15'
+            src: Facility15,
+            alt: 'Imagem 15',
+            gallery: []
         },
         {
             id: 16,
-            src: imgFacility16,
-            alt: 'Imagem 16'
+            src: Facility16,
+            alt: 'Imagem 16',
+            gallery: []
         },
         {
             id: 17,
-            src: imgFacility17,
-            alt: 'Imagem 17'
+            src: Facility17,
+            alt: 'Imagem 17',
+            gallery: []
         },
         {
             id: 18,
-            src: imgFacility18,
-            alt: 'Imagem 18'
+            src: Facility18,
+            alt: 'Imagem 18',
+            gallery: []
         },
         {
             id: 19,
-            src: imgFacility19,
-            alt: 'Imagem 19'
+            src: Facility19,
+            alt: 'Imagem 19',
+            gallery: []
         },
         {
             id: 20,
-            src: imgFacility20,
-            alt: 'Imagem 20'
+            src: Facility20,
+            alt: 'Imagem 20',
+            gallery: []
         },
         {
             id: 21,
-            src: imgFacility21,
-            alt: 'Imagem 21'
+            src: Facility21,
+            alt: 'Imagem 21',
+            gallery: []
         },
         {
             id: 22,
-            src: imgFacility22,
-            alt: 'Imagem 22'
+            src: Facility22,
+            alt: 'Imagem 22',
+            gallery: []
         },
         {
             id: 23,
-            src: imgFacility23,
-            alt: 'Imagem 23'
+            src: Facility23,
+            alt: 'Imagem 23',
+            gallery: []
         },
         {
             id: 24,
-            src: imgFacility24,
-            alt: 'Imagem 24'
+            src: Facility24,
+            alt: 'Imagem 24',
+            gallery: []
         },
         {
             id: 25,
-            src: imgFacility25,
-            alt: 'Imagem 25'
+            src: Facility25,
+            alt: 'Imagem 25',
+            gallery: []
         },
         {
             id: 26,
-            src: imgFacility26,
-            alt: 'Imagem 26'
+            src: Facility26,
+            alt: 'Imagem 26',
+            gallery: []
         }
     ]
 
@@ -196,7 +226,10 @@ const About = () => {
         return (
             <div
                 className="cursor-pointer relative overflow-hidden border-round-xl mx-2"
-                onClick={() => navigate('/novidades')}
+                onClick={() => {
+                    setSelectedImage(item)
+                    setVisibleDialog(true);
+                }}
             >
                 <img
                     src={item.src}
@@ -206,7 +239,6 @@ const About = () => {
             </div>
         );
     };
-
 
     return (
         <section>
@@ -260,11 +292,10 @@ const About = () => {
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.869173844103!2d-43.16804672504368!3d-22.955044739596886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99801a67b5eb6b%3A0xeddf40c5d68ff46f!2sPra%C3%A7a%20General%20Tib%C3%BArcio!5e0!3m2!1spt-BR!2sbr!4v1745093990652!5m2!1spt-BR!2sbr"
                                         width={width < 427 ? "210" : "600"}
                                         height="150"
-                                        frameborder="0"
                                         style={{ border: 0 }}
-                                        allowfullscreen=""
+                                        allowFullScreen
                                         aria-hidden="false"
-                                        tabindex="0"
+                                        tabIndex="0"
                                         loading="lazy"
                                     />
                                 </div>
@@ -275,7 +306,7 @@ const About = () => {
                             <div
                                 className='grid align-items-center'
                                 style={{ fontFamily: 'var(--font-family-suport)' }}>
-                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
+                                <ul className={`${(width < 426) ? 'col-12' : (width < 769) ? 'col-6' : 'col-2'} list-none`}>
                                     <li>1986 – Cel Ayres</li>
                                     <li>1987 – Cel Henrique</li>
                                     <li>1988 – Cel Praciano</li>
@@ -284,7 +315,7 @@ const About = () => {
                                     <li>1991 – TC Higino</li>
                                     <li>1992 – TC Boson</li>
                                 </ul>
-                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
+                                <ul className={`${(width < 426) ? 'col-12' : (width < 769) ? 'col-6' : 'col-2'} list-none`}>
                                     <li>1994 – TC Macedo / TC Rachevsky</li>
                                     <li>1995 – Cel Peres</li>
                                     <li>1998 – Cel Macedo</li>
@@ -292,7 +323,7 @@ const About = () => {
                                     <li>2002 – Cel Melo</li>
                                     <li>2004 – Cel Pastori</li>
                                 </ul>
-                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
+                                <ul className={`${(width < 426) ? 'col-12' : (width < 769) ? 'col-6' : 'col-2'} list-none`}>
                                     <li>2007 – Cel Sampaio</li>
                                     <li>2008 – Cel Elias</li>
                                     <li>2009 – Cel Marco Antônio</li>
@@ -301,7 +332,7 @@ const About = () => {
                                     <li>2012 – Cel Frazão</li>
                                     <li>2013 – Cel Paulo Sérgio</li>
                                 </ul>
-                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
+                                <ul className={`${(width < 426) ? 'col-12' : (width < 769) ? 'col-6' : 'col-2'} list-none`}>
                                     <li>2014 – Cel Melo</li>
                                     <li>2015 – Cel Narcizo</li>
                                     <li>2016 – Cel Bessa</li>
@@ -310,7 +341,7 @@ const About = () => {
                                     <li>2019 – Cel Moussallem</li>
                                     <li>2020 – Cel Sassone</li>
                                 </ul>
-                                <ul className={`${(width < 426) ? 'col-12' : (width<769)?'col-6':'col-2'} list-none`}>
+                                <ul className={`${(width < 426) ? 'col-12' : (width < 769) ? 'col-6' : 'col-2'} list-none`}>
                                     <li>2021 – Cel Corrêa Netto</li>
                                     <li>2022 – Cel José Euclides</li>
                                     <li>2023 – Cel Ivan Christie</li>
@@ -339,26 +370,13 @@ const About = () => {
                             />
                         </div>
                     </TabPanel>
-                    <TabPanel
-                        header="Galeria de Fotos"
-                        leftIcon={() => <div className='mt-1 pr-2'><FaPhotoFilm /></div>}>
-                        <div>
-                            <Carousel
-                                value={imgsFacilities}
-                                numVisible={3}
-                                numScroll={3}
-                                responsiveOptions={responsiveOptions}
-                                style={{ width: width > 1024 ? '97%' : '100%' }}
-                                itemTemplate={itemTemplate}
-                                showNavigators={width >= 1024}
-                                showIndicators={false}
-                                circular
-                                draggable
-                            />
-                        </div>
-                    </TabPanel>
                 </TabView>
             </div>
+            <ImgDialog
+                visible={visibleDialog}
+                onclose={() => setVisibleDialog(false)}
+                imgSelected={selectedImage}
+            />
         </section>
     )
 }

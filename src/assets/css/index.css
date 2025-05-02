@@ -21,8 +21,16 @@ body {
     font-family: var(--font-family) !important;
 }
 
-.p-button {
-    font-family: 'khand', sans-serif;
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+    display: none;
 }
 
 h1,

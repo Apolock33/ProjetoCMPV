@@ -2,8 +2,8 @@ import React from 'react'
 import useWindowSize from '../hooks/useWindowSize';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';
-import news1 from '../assets/imgs/general/bailecmpv.jpg';
-import news2 from '../assets/imgs/general/Comunicado-aos-socios.png';
+import news1 from '../assets/imgs/general/noticias/bailecmpv.jpg';
+import news2 from '../assets/imgs/general/noticias/Comunicado-aos-socios.png';
 import { motion } from 'motion/react';
 
 const HomeNews = () => {

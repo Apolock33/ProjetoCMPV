@@ -1,14 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import { GlobalContext } from '../contexts/globalContext';
-import useWindowSize from '../hooks/useWindowSize';
-import { AnimatePresence, motion } from 'motion/react';
-import { Button } from 'primereact/button';
 import { FaX } from 'react-icons/fa6';
-import { FiZoomIn, FiZoomOut } from 'react-icons/fi';
+import { Button } from 'primereact/button';
+import useWindowSize from '../hooks/useWindowSize';
 
 const ImgDialog = ({ visible, onclose, imgSelected }) => {
-    const { isMobile, zoomLevel, setZoomLevel } = useContext(GlobalContext);
-    const { width } = useWindowSize();
+    const context = useContext(GlobalContext);
+    const isMobile = context.isMobile;
+    const size = useWindowSize();
+    const width = size.width;
 
     const backdrop = {
         visible: { opacity: 1 },
@@ -42,44 +43,34 @@ const ImgDialog = ({ visible, onclose, imgSelected }) => {
         };
     }, [visible, onclose]);
 
-    const zoomIn = () => {
-        setZoomLevel(prev => Math.min(prev + 0.2, 3)); // máximo 3x
-    };
-
-    const zoomOut = () => {
-        setZoomLevel(prev => Math.max(prev - 0.2, 1)); // mínimo 1x
-    };
-
     const imageTemplate = (image) => {
-        const baseWidth = isMobile ? 300 : 500; // base para a largura da imagem
-        const containerWidth = baseWidth * zoomLevel;
-
         return (
-            <div
-                className="flex justify-content-center align-items-center overflow-auto"
-                style={{
-                    width: '100%',
-                    maxHeight: isMobile ? '250px' : '500px',
-                }}
-            >
+            <div className="bg-white border-round-xl grid">
                 <div
-                    style={{
-                        width: `${containerWidth}px`,
-                        transition: 'width 0.3s ease',
-                    }}
+                    className={`${width < 768 ? 'col-12' : 'col-6'} flex justify-content-center align-items-center`}
+                    style={{ padding: '1rem' }}
                 >
                     <img
-                        id='imgSelected'
-                        src={image?.src}
+                        src={image?.itemImageSrc}
                         alt={image?.title}
                         style={{
                             width: '100%',
                             height: 'auto',
+                            maxHeight: isMobile ? '200px' : '400px',
                             objectFit: 'contain',
-                            borderRadius: '12px',
-                            display: 'block',
+                            borderRadius: '12px'
                         }}
                     />
+                </div>
+                <div className={`${width < 768 ? 'col-12' : 'col-6'} pr-5`} style={{ padding: '1rem' }}>
+                    <h1 style={{ color: 'var(--primary-color)' }}>{image?.title} - Informações:</h1>
+                    <p style={{
+                        whiteSpace: 'pre-wrap',
+                        overflowWrap: 'break-word',
+                        wordWrap: 'break-word',
+                        wordBreak: 'break-word',
+                        fontFamily: 'var(--font-family-suport)',
+                    }}>{image?.infos}</p>
                 </div>
             </div>
         );
@@ -94,6 +85,7 @@ const ImgDialog = ({ visible, onclose, imgSelected }) => {
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
+                    onClick={onclose}
                     style={{
                         position: 'fixed',
                         top: 0,
@@ -107,29 +99,14 @@ const ImgDialog = ({ visible, onclose, imgSelected }) => {
                         zIndex: 10
                     }}
                 >
-                    <div className={`absolute top-0 right-0 z-5 flex gap-5 ${width < 769 ? 'm-3' : 'm-5'}`}>
-                        <Button
-                            icon={() => <FiZoomOut size={55} />}
-                            rounded
-                            text
-                            className="text-white"
-                            onClick={zoomOut}
-                        />
-                        <Button
-                            icon={() => <FiZoomIn size={55} />}
-                            rounded
-                            text
-                            className="text-white"
-                            onClick={zoomIn}
-                        />
-                        <Button
-                            icon={() => <FaX size={35} />}
-                            rounded
-                            text
-                            className="text-white p-2"
-                            onClick={onclose}
-                        />
-                    </div>
+                    <Button
+                        icon={() => <FaX size={35} />}
+                        rounded
+                        text
+                        className={`absolute top-0 right-0 z-5 text-white p-2 ${width < 769 ? 'm-3' : 'm-5'}`}
+                        onClick={onclose}
+                    />
+
                     <motion.div
                         className="modal flex justify-content-center align-items-center"
                         variants={modal}
@@ -138,9 +115,10 @@ const ImgDialog = ({ visible, onclose, imgSelected }) => {
                         exit="exit"
                         onClick={(e) => e.stopPropagation()}
                         style={{
+                            background: 'var(--background-color)',
                             borderRadius: '8px',
-                            width: '100%',
-                            maxWidth: '1000px',
+                            width: '80%',
+                            maxWidth: '650px',
                         }}
                     >
                         {imgSelected && imageTemplate(imgSelected)}
@@ -151,4 +129,4 @@ const ImgDialog = ({ visible, onclose, imgSelected }) => {
     )
 }
 
-export default ImgDialog
+export default ImgDialog;

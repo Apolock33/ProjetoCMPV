@@ -5,7 +5,7 @@ import Logo from '../assets/imgs/logos/newLogoDark.svg'
 import useWindowSize from '../hooks/useWindowSize'
 import { Button } from 'primereact/button'
 import { FaArrowLeft } from 'react-icons/fa6'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,19 +37,22 @@ const Login = () => {
         <hr className='my-3' />
         <div className='grid'>
           <div className='flex flex-column align-items-center w-full'>
-            <span className='text-sm'>Ainda não faz parte do nosso Círculo?</span>
-            <Button label="Seja CMPV" className='w-full mt-3 border-round-md' style={{ backgroundColor: 'var(--primary-color)' }} />
+              <Link
+                to="/"
+                className='no-underline flex gap-2 hover:underline'
+                style={{ color: 'var(--primary-color)' }} >
+                Ainda não faz parte do nosso Círculo?
+                Seja CMPV
+              </Link>
           </div>
-          <div className='flex flex-column align-items-center w-full mt-3'>
-            <Button
-              rounded
-              outlined
-              icon={<FaArrowLeft />}
-              label="Voltar a Home"
-              className='w-full mt-3 border-round-md mb-2'
-              style={{ color: 'var(--primary-color)' }} 
-              onClick={() => navigate('/')}
-              />
+          <div className='flex flex-column align-items-center w-full mt-1'>
+            <Link
+              to="/"
+              className='flex justify-content-center align-items-center w-full mt-3 mt-3 border-round-md mb-2 no-underline hover:underline'
+              style={{ color: 'var(--primary-color)' }} >
+              <FaArrowLeft size={20} className='mr-2' />
+              Voltar a Home
+            </Link>
           </div>
         </div>
       </div>
