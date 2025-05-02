@@ -18,7 +18,7 @@ const Home = () => {
         <HomeCarousel />
       </motion.section>
 
-      <section id='news' className="flex flex-column md:flex-row gap-4 p-4">
+      <section id='news' className="flex flex-column md:flex-row gap-4 px-6">
         <div className="w-full md:w-6">
           <HomeNews />
         </div>
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section id='rents'>
+      <section id='rents' className='px-4'>
         <Rents />
       </section>
     </>

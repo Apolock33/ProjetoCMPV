@@ -3,7 +3,7 @@ import { GlobalContext } from '../contexts/globalContext';
 import { Button } from 'primereact/button';
 import { FaFacebook, FaLinkedin } from 'react-icons/fa6';
 import { motion } from 'motion/react';
-import Logo from '../assets/imgs/logos/newLogoDark.svg';
+import Logo from '../assets/imgs/logos/Logo.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import GeneralDrawer from './generalDrawer';
 import { InputText } from "primereact/inputtext";
@@ -123,7 +123,7 @@ const Header = () => {
                 className={`w-full search-navbar flex align-items-end gap-3 ${isMobile ? 'px-4 justify-content-center' : 'px-8 justify-content-end'}`}
                 initial={{ opacity: 0, height: isMobile ? 80 : 160 }}
                 whileInView={{
-                    height: isMobile ? 145 : 185,
+                    height: isMobile ? 150 : 193,
                     opacity: showSecondaryHeader ? 1 : 0,
                 }}
                 transition={{ duration: 0.5 }}
