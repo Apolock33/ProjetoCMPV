@@ -43,6 +43,10 @@ export const GlobalProvider = ({ children }) => {
         }
     });
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, [location.pathname])
+
     return (
         <GlobalContext.Provider value={{ isMobile, isScrollingDown, showSecondaryHeader, zoomLevel, setZoomLevel }}>
             {children}

@@ -16,12 +16,6 @@ const ContactForm = () => {
   const [subject, setSubject] = useState('');
   const [content, setContent] = useState('');
 
-  useEffect(() => {
-    console.log('Email:', email);
-    console.log('Subject:', subject);
-    console.log('Content:', content);
-  }, [email, subject, content]);
-
   const show = () => {
     toast.current.show({ severity: 'success', summary: 'Sucesso!', detail: 'Solicitação Enviada' });
   };

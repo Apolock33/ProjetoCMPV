@@ -1,7 +1,7 @@
 import { InputText } from 'primereact/inputtext'
 import React, { useState } from 'react'
 import { FloatLabel } from 'primereact/floatlabel'
-import Logo from '../assets/imgs/logos/newLogoDark.svg'
+import Logo from '../assets/imgs/logos/Logo.svg'
 import useWindowSize from '../hooks/useWindowSize'
 import { Button } from 'primereact/button'
 import { FaArrowLeft } from 'react-icons/fa6'
