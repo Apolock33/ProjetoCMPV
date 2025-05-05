@@ -46,8 +46,7 @@ const NewsDetails = () => {
                         <img src={newsItem?.imageUrl} alt={newsItem?.title} className="w-full h-auto" />
                     </div>
                     <div className="flex w-full md:w-8 lg:w-6 xl:w-8">
-                        <p
-                            style={{ wordWrap: 'break-word', whiteSpace: 'pre-line' }}>{newsItem?.info}</p>
+                        <p style={{ wordWrap: 'break-word', whiteSpace: 'pre-line' }}>{newsItem?.info}</p>
                     </div>
                 </div>
             </div>
