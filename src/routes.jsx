@@ -1,5 +1,6 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import NewsDetails from './pages/newsDetails'
 
 const MainLayout = React.lazy(() => import('./components/mainLayout'))
 const BlankLayout = React.lazy(() => import('./components/blankLayout'))
@@ -39,6 +40,18 @@ const Routes = () => {
                     id: 4,
                     path: 'contatos',
                     element: <Contacts />,
+                    errorElement: <Error />
+                },
+                {
+                    id: 5,
+                    path: 'novidades',
+                    element: <Home />,
+                    errorElement: <Error />
+                },
+                {
+                    id: 6,
+                    path: 'novidades/:id',
+                    element: <NewsDetails />,
                     errorElement: <Error />
                 },
             ]

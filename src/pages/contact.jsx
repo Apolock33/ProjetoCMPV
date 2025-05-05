@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import { BreadCrumb } from 'primereact/breadcrumb'
 import useWindowSize from '../hooks/useWindowSize'
 import ContactForm from '../components/contactForm'

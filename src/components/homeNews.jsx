@@ -1,55 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import useWindowSize from '../hooks/useWindowSize';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';
-import news1 from '../assets/imgs/general/noticias/bailecmpv.jpg';
-import news2 from '../assets/imgs/general/noticias/Comunicado-aos-socios.png';
 import { motion } from 'motion/react';
+import { GlobalContext } from '../contexts/globalContext';
 
 const HomeNews = () => {
     const { width } = useWindowSize();
+    const { newsInfos } = useContext(GlobalContext);
+    const navigate = useNavigate();
 
-    const cardInfosMobile = [
-        {
-            id: 1,
-            title: 'BAILE DE BOAS VINDAS ECEME E 68 ANOS DO CMPV',
-            description: '03/04/2025',
-            imageUrl: news1
-        },
-        {
-            id: 2,
-            title: 'Aviso sobre o feriado da semana santa',
-            description: '03/04/2025',
-            imageUrl: news2
-        },
-    ];
-
-    const cardInfos = [
-        {
-            id: 1,
-            title: 'BAILE DE BOAS VINDAS ECEME E 68 ANOS DO CMPV',
-            description: '03/04/2025',
-            imageUrl: news1
-        },
-        {
-            id: 2,
-            title: 'Aviso sobre o feriado da semana santa',
-            description: '03/04/2025',
-            imageUrl: news2
-        },
-        {
-            id: 3,
-            title: 'Aviso sobre o feriado da semana santa',
-            description: '03/04/2025',
-            imageUrl: news2
-        },
-        {
-            id: 4,
-            title: 'Aviso sobre o feriado da semana santa',
-            description: '03/04/2025',
-            imageUrl: news1
-        },
-    ];
+    const cardInfosMobile = newsInfos.slice(0, 2);
 
     return (
         <div className="p-4">
@@ -62,24 +23,20 @@ const HomeNews = () => {
             </div>
 
             <div className={`${width < 768 ? 'flex flex-column' : 'grid'}`}>
-                {(width < 769 ? cardInfosMobile : cardInfos).map((card) => (
+                {(width < 769 ? cardInfosMobile : newsInfos).map((card) => (
                     <motion.div
                         key={card.id}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: card.id * 0.1 }}
-                        className={`${width < 769 ? 'col-12 mb-3' : 'col-6'} `}
-                        style={{
-                            height: width < 769 ? '350px' : '400px',
-                        }}
-                        onClick={() => setNewsInfos(card)}
+                        className={`${width < 769 ? 'col-12 mb-3' : 'col-6'} cursor-pointer`}
+                        style={{ height: width < 769 ? '350px' : '400px' }}
+                        onClick={() => navigate('/novidades/' + card.id, { state: { card } })}
                     >
                         <div
                             className="relative overflow-hidden w-full h-full border-round-xl"
-                            style={{
-                                borderRadius: '12px',
-                            }}
+                            style={{ borderRadius: '12px' }}
                         >
                             <motion.img
                                 src={card.imageUrl}
