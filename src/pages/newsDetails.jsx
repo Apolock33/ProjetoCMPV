@@ -18,7 +18,6 @@ const NewsDetails = () => {
 
     const breadcrumbItems = [
         { label: 'Home', url: '/' },
-        { label: 'Novidades', url: '/novidades' },
         { label: `${newsItem?.title}`, url: `/novidades/${id}` }
     ];
 
@@ -45,7 +44,8 @@ const NewsDetails = () => {
                     <div className="flex flex-column gap-3 w-full md:w-8 lg:w-6 xl:w-4">
                         <img src={newsItem?.imageUrl} alt={newsItem?.title} className="w-full h-auto" />
                     </div>
-                    <div className="flex w-full md:w-8 lg:w-6 xl:w-8">
+                    <div className="flex flex-column w-full md:w-8 lg:w-6 xl:w-8">
+                        <h1 style={{ color: 'var(--primary-color)' }}>Informações:</h1>
                         <p style={{ wordWrap: 'break-word', whiteSpace: 'pre-line' }}>{newsItem?.info}</p>
                     </div>
                 </div>

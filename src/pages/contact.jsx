@@ -9,7 +9,7 @@ const Contact = () => {
   const breadcrumbItems = [
     { label: 'Home', url: '/' },
     { label: 'Contatos', url: '/contatos' }
-];
+  ];
 
   return (
     <section>

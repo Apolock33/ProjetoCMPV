@@ -1,23 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Card } from 'primereact/card';
+import React, { useContext, useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
-import event1 from '../assets/imgs/general/evento1.jpg';
+import { Link, useNavigate } from 'react-router-dom';
 import useWindowSize from '../hooks/useWindowSize';
+import { motion } from 'motion/react';
+import { GlobalContext } from '../contexts/globalContext';
 
 const Events = () => {
     const { width } = useWindowSize();
-
-    const eventItems = [
-        { id: 1, img: event1, title: 'Evento 1', date: '20/04/2025' },
-        { id: 2, img: event1, title: 'Evento 2', date: '21/04/2025' },
-        { id: 3, img: event1, title: 'Evento 3', date: '22/04/2025' },
-        { id: 4, img: event1, title: 'Domingo de Páscoa da Garotada', date: '23/04/2025' },
-    ];
-
-    useEffect(() => {
-
-    }, [width]);
+    const navigate = useNavigate();
+    const { eventInfos } = useContext(GlobalContext);
 
     return (
         <div className='p-4'>
@@ -34,13 +25,16 @@ const Events = () => {
             </div>
 
             <div className="flex flex-column gap-3">
-                {eventItems.map((event) => (
-                    <div
+                {eventInfos.map((event) => (
+                    <motion.div
                         key={event.id}
-                        className="w-full"
+                        className="w-full cursor-pointer"
                         style={{
                             height: width < 768 ? '100px' : '155px',
                         }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => navigate('/eventos/' + event.id)}
                     >
                         <div className="w-full  overflow-hidden border-round-xl  shadow-1 bg-white">
                             <div className="flex h-full justify-content-start align-items-center">
@@ -48,8 +42,8 @@ const Events = () => {
                                     src={event.img}
                                     alt={event.title}
                                     style={{
-                                        width: width < 768 ? '100px' : '150px', // largura fixa menor
-                                        height: width < 768 ? '100px' : '150px', // altura fixa menor
+                                        width: width < 768 ? '100px' : '150px',
+                                        height: width < 768 ? '100px' : '150px',
                                         objectFit: 'cover',
                                         flexShrink: 0,
                                     }}
@@ -61,7 +55,7 @@ const Events = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
 
             </div>
