@@ -32,7 +32,7 @@ const HomeNews = () => {
                         transition={{ duration: 0.4, delay: card.id * 0.1 }}
                         className={`${width < 769 ? 'col-12 mb-3' : 'col-6'} cursor-pointer`}
                         style={{ height: width < 769 ? '350px' : '400px' }}
-                        onClick={() => navigate('/novidades/' + card.id, { state: { card } })}
+                        onClick={() => navigate('/novidades/' + card.id)}
                     >
                         <div
                             className="relative overflow-hidden w-full h-full border-round-xl"

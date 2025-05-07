@@ -8,7 +8,7 @@ import { GlobalContext } from '../contexts/globalContext';
 const Events = () => {
     const { width } = useWindowSize();
     const navigate = useNavigate();
-    const { eventInfos } = useContext(GlobalContext);
+    const { eventsInfos } = useContext(GlobalContext);
 
     return (
         <div className='p-4'>
@@ -17,7 +17,7 @@ const Events = () => {
                 <Link
                     to="/eventos"
                     className='flex align-items-center no-underline gap-2 font-medium'
-                    style={{ color: 'var(--primary-color)', fontFamily:'var(--font-family-suport)' }}
+                    style={{ color: 'var(--primary-color)', fontFamily: 'var(--font-family-suport)' }}
                 >
                     Veja Mais
                     <FaArrowRight />
@@ -25,13 +25,11 @@ const Events = () => {
             </div>
 
             <div className="flex flex-column gap-3">
-                {eventInfos.map((event) => (
+                {eventsInfos?.map((event) => (
                     <motion.div
                         key={event.id}
                         className="w-full cursor-pointer"
-                        style={{
-                            height: width < 768 ? '100px' : '155px',
-                        }}
+                        style={{ height: width < 768 ? '100px' : '155px' }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => navigate('/eventos/' + event.id)}
